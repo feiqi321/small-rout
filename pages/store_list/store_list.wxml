@@ -15,5 +15,5 @@
 </view>
 <view class='db'>
 <view class='hd'>代币</view>
-<view class='db-item' wx:for="{{dblist}}" wx:for-item="item" wx:key="item.id">{{item.text}}</view>
+<view class='db-item' wx:for="{{dblist}}" wx:for-item="item" wx:key="item.id">  {{item.amount}}  代币</view>
 </view>

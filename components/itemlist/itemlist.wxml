@@ -1,6 +1,6 @@
 <!--components/itemlist/itemlist.wxml-->
 <view class='listitem' bindtap='gotoDetail'>
-<image src="{{listData.img}}"></image>
-<view class='list-hd'>{{listData.title}}</view>
+<image src="{{listData.img_url}}"></image>
+<view class='list-hd'>{{listData.product_name}}</view>
 <view class='price'>￥ {{listData.price}}</view>
 </view>

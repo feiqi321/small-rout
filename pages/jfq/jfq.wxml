@@ -5,17 +5,17 @@
 <view class='my-jf'>
 {{aa}}
 <text class='zs-btn' bindtap="modalinput">赠送>></text>
-<text class='f36'>当前积分 1099</text>
-<text>转出：200 收到：300</text>
+<text class='f36'>当前积分 {{objdata.totalPoint}}</text>
+<text>转出：{{objdata.outPoint}} 收到：{{objdata.inPoint}}</text>
 </view>
 <view class='jf-list'>
   <text class='hd'>积分明细</text>
   <view class='item' wx:for="{{listdata}}" wx:for-item="item" wx:key="item.id">
     <view class='ly'>
-    <text>{{item.text}}</text>
-    <text class='fr'>{{item.jf}}</text>
+    <text>{{item.sendUsername}}</text>
+    <text class='fr'>{{item.amount}}</text>
     </view>
-    <view class='time'>{{item.time}}</view>
+    <view class='time'>{{item.creattime}}</view>
   </view>
 </view>
 <modal hidden="{{hiddenmodalput}}" title="转让积分" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  

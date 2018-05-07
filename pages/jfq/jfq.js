@@ -6,31 +6,18 @@ Page({
    */
   data: {
     hiddenmodalput: true,  
+    objdata:{
+     // totalPoint:1099,
+     // inPoint:300,
+     // outPoint:200
+    },
     listdata: [
-      {
-        text: '张三赠送',
-        time: '2017-12-23 12:25:23',
-        jf: '+200',
-        id: 1
-      },
-      {
-        text: '送个张三',
-        time: '2017-12-23 12:25:23',
-        jf: '-200',
-        id: 2
-      },
-      {
-        text: '张三赠送',
-        time: '2017-12-23 12:25:23',
-        jf: '+200',
-        id: 3
-      },
-      {
-        text: '张三赠送',
-        time: '2017-12-23 12:25:23',
-        jf: '-200',
-        id: 4
-      }
+      //{
+      //  text: '张三赠送',
+      //  time: '2017-12-23 12:25:23',
+      //  jf: '+200',
+      //  id: 1
+     // }
     ]
   },
   modalinput: function () {
@@ -54,7 +41,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(111)
+    var that = this;
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/point/list?userId=18',
+      method: 'GET',
+      success: function (res) {
+        that.setData({
+          listdata: res.data.rows,
+          objdata: res.data.data
+        })
+      }
+
+    })
   },
 
   /**
@@ -105,4 +103,8 @@ Page({
   onShareAppMessage: function () {
 
   }
+
+
+
+
 })

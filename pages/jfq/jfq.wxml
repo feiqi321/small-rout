@@ -1,0 +1,26 @@
+<view class='nav'>
+ <navigator url="/pages/store_list/store_list" hover-class="navigator-hover" open-type="switchTab">福利认领区</navigator>
+ <navigator url="/pages/jfq/jfqt" hover-class="navigator-hover" class='navigator-hover'>积分交换区</navigator>
+</view>
+<view class='my-jf'>
+{{aa}}
+<text class='zs-btn' bindtap="modalinput">赠送>></text>
+<text class='f36'>当前积分 1099</text>
+<text>转出：200 收到：300</text>
+</view>
+<view class='jf-list'>
+  <text class='hd'>积分明细</text>
+  <view class='item' wx:for="{{listdata}}" wx:for-item="item" wx:key="item.id">
+    <view class='ly'>
+    <text>{{item.text}}</text>
+    <text class='fr'>{{item.jf}}</text>
+    </view>
+    <view class='time'>{{item.time}}</view>
+  </view>
+</view>
+<modal hidden="{{hiddenmodalput}}" title="转让积分" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+    <view class='jf-dialog'>
+    <view>用户手机号<input type='number'placeholder="请输入用户积分" auto-focus/>  </view>
+    <view>转让积分<input type='number'/>  </view>
+    </view>
+</modal>  

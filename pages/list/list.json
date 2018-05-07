@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "商品中心",
+    "usingComponents": {
+      "listitem": "/components/itemlist/itemlist"
+    }
+}

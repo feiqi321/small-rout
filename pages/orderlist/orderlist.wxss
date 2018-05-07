@@ -1,0 +1,123 @@
+/* pages/orderlist/orderlist.wxss */
+
+.topnav {
+  border-top: 1px solid #e1e1e1;
+  line-height: 90rpx;
+  border-bottom: 1px solid #e1e1e1;
+  overflow: hidden;
+  display: flex;
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.topnav text {
+  flex: 1;
+  margin: 0 20rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 82rpx;
+  border-top: 4rpx solid #fff;
+  border-bottom: 4rpx solid #fff;
+  color: #666;
+}
+
+.topnav .active {
+  border-bottom-color: #f44;
+}
+
+.order-wrapper {
+  margin-top: 100rpx;
+}
+
+.order-item {
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+
+.order-item .order-status {
+  line-height: 80rpx;
+  height: 80rpx;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 0 15rpx;
+}
+
+.order-item .order-status text {
+  float: right;
+  color: #f00;
+}
+
+.order-item .detail {
+  overflow: hidden;
+  padding: 15rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.order-item image {
+  float: left;
+  width: 150rpx;
+  height: 120rpx;
+}
+
+.order-item .detail view {
+  margin-left: 170rpx;
+  line-height: 50rpx;
+  height: 50rpx;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.order-item .detail view .fr{
+  float: right;
+}
+
+.order-item .go-more {
+  line-height: 80rpx;
+  text-align: center;
+  color: #f00;
+  padding: 0 15rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.order-item .total {
+  line-height: 80rpx;
+  padding: 0 15rpx;
+  text-align: right;
+  color: #f00;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.order-item .total text {
+  color: #f00;
+}
+
+.order-item .tool {
+  padding: 15rpx;
+  text-align: right;
+}
+.order-item .tool text{
+  line-height: 60rpx;
+  height: 60rpx;
+  border: 1px solid #e2e2e2;
+  display: inline-block;
+  padding: 0 40rpx;
+  font-size: 24rpx;
+  color: #666;
+  margin-left:20rpx; 
+  border-radius: 6rpx;
+}
+.empty{
+  padding: 120rpx 0;
+  text-align: center;
+  line-height: 3em;
+  font-size: 30rpx;
+}
+.empty text{
+  display: block;
+  color: #999;
+}

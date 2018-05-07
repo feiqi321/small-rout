@@ -1,0 +1,205 @@
+/* pages/goods_detail/goods_detail.wxss */
+.top-img{
+  height: 350rpx;
+}
+.top-img image{
+  width: 100%;
+  height: 350rpx;
+}
+.m-detail{
+  overflow: hidden;
+}
+.m-detail .hd{
+  background: #fff;
+  line-height: 2.2em;
+  padding: 20rpx;
+  border-bottom: 1px solid #e2e2e2;
+  margin-bottom: 20rpx;
+}
+.m-detail .hd .title{
+  font-size: 28rpx;
+  display: block;
+}
+.m-detail .hd .money{
+  color: #f00;
+  font-size: 32rpx
+}
+.m-detail .hd .des{
+  font-size: 24rpx;
+  color: #999;
+}
+.m-detail .hd .yf{
+  margin-right: 4em;
+}
+.m-detail .bd{
+  background: #fff;
+  border-top: 1px solid #e2e2e2;
+}
+.m-detail .bd .tab-nav{
+  line-height: 80rpx;
+  display: flex;
+  border-bottom: 1px solid #e2e2e2;
+}
+.m-detail .bd .tab-nav text{
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+}
+.m-detail .bd .tab-nav text:first-child{
+  border-right: 1px solid #e2e2e2;
+}
+.tab-nav .active{
+  color: #f00;
+}
+.tab-content{
+  padding: 40rpx 20rpx;
+  overflow: hidden;
+  font-size: 24rpx;
+  line-height: 2em;
+}
+.bot-tool{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  overflow: hidden;
+  border-top: 1px solid #e2e2e2;
+  display: flex;
+  font-size: 28rpx;
+}
+.bot-tool .add-gwc{
+  flex: 4;
+  background: #ff8854;
+  color: #fff;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+}
+.bot-tool .buy{
+  flex: 4;
+  background: #fe4543;
+  color: #fff;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+}
+.bot-tool .gwc{
+  flex: 1;
+  background-size:80% 80%;
+  width: 90rpx;
+  height: 90rpx;
+}
+.cjjl .th{
+  background: #f2f2f2;
+  color: #333;
+  font-size: 24rpx;
+  line-height: 3em;
+  text-align: center;
+  overflow: hidden;
+}
+.cjjl .th text{
+  float: left;
+  width: 33.3%;
+}
+.cjjl .item{
+  margin: 0 10rpx;
+  line-height: 3em;
+  font-size: 24rpx;
+  border-bottom: 1px solid #e2e2e2;
+  text-align: center;
+  overflow: hidden;
+}
+.cjjl .item text{
+  float: left;
+  width: 33.3%;
+  color: #999;
+}
+
+.addCard{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.addCard .mask{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+.addCard .box{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+
+}
+.addCard .detail{
+  border-bottom: 1px solid #e2e2e2;
+  padding: 20rpx;
+  overflow: hidden;
+}
+.addCard .detail image{
+  width: 180rpx;
+  height: 180rpx;
+  float: left;
+  margin-left: 20rpx;
+}
+.addCard .detail text{
+  display: block;
+  margin-left: 240rpx;
+  line-height: 3em;
+  font-size: 28rpx;
+}
+.addCard .detail .red{
+  color: #f00;
+}
+.addCard .buynum{
+  padding: 40rpx 10rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+  line-height: 70rpx;
+}
+.addCard .changeNum {
+  display: inline-block;
+  float: right;
+  line-height: 70rpx;
+}
+.addCard .changeNum .reduce,.addCard .changeNum .add{
+  background: #f5f5f5;
+  width: 80rpx;
+  text-align: center;
+  height: 70rpx;
+  display: inline-block;
+  margin: 0 20rpx;
+  font-size: 34rpx;
+  vertical-align: middle;
+}
+.addCard .changeNum .number{
+  display: inline-block;
+  width: 100rpx;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  vertical-align: middle
+}
+.addCard .btn-wrapper{
+  padding: 20rpx;
+  border-top: 1px solid #e2e2e2;
+  overflow: hidden;
+}
+.addCard .btn-wrapper .btn{
+  line-height: 80rpx;
+  display: block;
+  text-align: center;
+  width: 100%;
+  background: #ff4e01;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 6px;
+}

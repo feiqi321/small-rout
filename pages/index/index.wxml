@@ -1,0 +1,44 @@
+
+<!-- <view class='search-box'>
+  <view class='input'></view>
+</view> -->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" indicator-active-color="#e61773" indicator-color="#ffffff" class='slider'>
+  <block wx:for="{{lunbo_src}}">
+    <swiper-item>
+      <image src="{{item}}" class='slide-image'/>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 轮播图-->
+
+<view bindtap='goSearch'> <mysearch id="mysearch" isDisabled="true"></mysearch> </view>
+<!-- 八个分类菜单-->
+<view class='home-nav'>
+  <view class="home-nav-item" wx:for="{{cate_src}}" wx:for-item="item">
+    <image mode="{{item.mode}}" src="{{item.picture}}"></image>
+    <view class="section_title">{{item.text}}</view>
+  </view>
+</view>
+<view class='home-fx'>
+  <view class='hd'>分享</view>
+  <view class='wrapper'>
+    <view class='fx-item' wx:for="{{listData}}">
+      <image src='{{item.url}}' mode="widthFix"></image>
+      <text>{{item.title}}</text>
+      <view class='f-tb'><text class='fl'>{{item.userId}}</text><image src='../../image/xin.png'></image><text>{{item.thumbs}}</text></view>
+    </view>
+  </view>
+</view>
+<!-- 八个分类菜单-->
+<!-- <view>
+<view class='tj-hd'>热卖商品</view>
+<listitem wx:for="{{listData}}" listData="{{item}}" wx:for-item="item"></listitem>
+</view> -->
+
+
+<view class="footer">
+  <text>地址：光谷国际广场B座6楼</text>
+  <text>商城24小时免费服务热线：400-566-2001</text>
+  <text>Copyright © 2015-2016 杭州诸相网络科技有限公司</text>
+</view>

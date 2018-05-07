@@ -1,0 +1,38 @@
+.nav{
+  background: #fff;
+  height: 40px;
+  margin-bottom: 20rpx;
+}
+.nav navigator{
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 38px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.navigator-hover{
+  border-bottom: 2px solid #f00;
+  background: #fff;
+}
+.login{
+  padding: 40rpx;
+  background: #fff;
+}
+.login input{
+    width: 100%;
+    height: 48px;
+    padding-left: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #333;
+    -webkit-appearance: none;
+    margin-bottom: 30rpx;
+    font-size: 28rpx;
+}
+.login .des{
+  line-height: 2em;
+  font-size: 28rpx;
+  color: #999;
+  margin-bottom: 30rpx;
+}

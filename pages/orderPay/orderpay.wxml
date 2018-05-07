@@ -1,0 +1,25 @@
+<view class='address' bindtap='changeAddress'>
+  <block wx:if='{{address}}'>
+    <image src='../../image/yjt.png'></image>
+    <view class='user'>收货人：朱文成 <text>15872459666</text></view>
+    <view class='detail'>收货地址：湖北省武汉市高新五路长航社区</view>
+  </block>
+  <block wx:else>
+    <view>选择地址</view>
+  </block>
+</view>
+
+<view class='table-de-tr' wx:for="{{listData}}" wx:for-item="item" wx:key="item.id" wx:for-index="index">
+  <view class='img'>
+    <image src='http://xu-game.xubei.com/game/QJ7nmczbe4.png'></image>
+  </view>
+  <view class='detail'>
+    <view class='title'>{{item.title}}</view>
+    <view class='des'>{{item.des}}</view>
+    <view class='n-p'>
+      <text class='money'>${{item.total}}</text>
+      <text>X{{item.num}}</text>
+    </view>
+  </view>
+</view>
+<view class='bot-tool'>合计： <text class='money'>￥288.00</text><text class='sub'>提交订单</text></view>

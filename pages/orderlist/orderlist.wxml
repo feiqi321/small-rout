@@ -1,0 +1,33 @@
+<view class='topnav'>
+  <text class='{{navIndex==0?"active":""}}' bindtap='changeTab' data-key='0'>全部</text>
+  <text class='{{navIndex==1?"active":""}}' bindtap='changeTab' data-key='1'>待付款</text>
+  <text class='{{navIndex==2?"active":""}}' bindtap='changeTab' data-key='2'>待发货</text>
+  <text class='{{navIndex==3?"active":""}}' bindtap='changeTab' data-key='3'>已发货</text>
+</view>
+
+<view class='order-wrapper'>
+  <view class='order-item' wx:for="{{listData}}">
+    <view class='order-status'>订单编号：{{item.orderNo}}
+      <text>{{item.orderStatusText}}</text>
+    </view>
+    <view class='detail'>
+      <image src="//img11.360buyimg.com/mobilecms/s80x80_jfs/t8119/4/2101514182/84322/3686a33a/59c467b3N091a4d78.jpg!q90.webp"></image>
+      <view>
+        <text>{{item.shopTitle}}</text>
+        <!-- <text class='fr'>￥40.00</text> -->
+      </view>
+      <view class='fr'>X{{item.num}}</view>
+    </view>
+    <view class='go-more'>查看全部{{item.shopNum}}件商品</view>
+    <view class='total'>合计：
+      <text>￥{{item.total}}</text>
+    </view>
+    <view class='tool' wx:if='{{item.orderStatus==0||item.orderStatus==2}}'>
+      <text wx:if='{{item.orderStatus==0}}' bindtap='gotoPay' data-id="{{item.orderNo}}">去付款</text>
+      <text wx:if='{{item.orderStatus==2}}' bindtap='gotocom' data-id="{{item.orderNo}}">评论</text>
+    </view>
+  </view>
+  <view wx:if="{{listData.length==0}}" class='empty'>
+    没有订单
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<!--components/search/search.wxml-->
+<view class='search-box'>
+<input type="text" placeholder="输入商品名称" disabled="{{isDisabled}}" confirm-type="done" bindconfirm="search" />
+</view>

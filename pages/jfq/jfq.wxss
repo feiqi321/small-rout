@@ -1,0 +1,79 @@
+/**index.wxss**/
+.nav{
+  background: #fff;
+  height: 40px;
+  margin-bottom: 20rpx;
+}
+.nav navigator{
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 38px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.navigator-hover{
+  border-bottom: 2px solid #f00;
+  background: #fff;
+}
+.my-jf{
+  overflow: hidden;
+  background: #f1394e;
+  position: relative;
+  color: #fff;
+  padding: 40rpx 20px;
+  font-size: 28rpx;
+  line-height: 2.2em;
+}
+.f36{
+  font-size: 36rpx;
+}
+.my-jf text {
+  display: block;
+  text-align: left;
+}
+.my-jf .zs-btn{
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  font-size: 28rpx;
+}
+
+.jf-list{
+  overflow: hidden;
+  background: #fff;
+}
+.jf-list .hd{
+  line-height: 64rpx;
+  padding: 0 20rpx;
+  color: #ccc;
+}
+.jf-list .item{
+  margin: 0 20rpx;
+  padding: 20rpx 0;
+  overflow: hidden;
+  border-bottom: 1px solid #e2e2e2;
+  line-height: 2.2em;
+}
+.jf-list .time{
+  color: #ccc;
+  font-size: 24rpx;
+}
+.jf-list .ly{
+  overflow: hidden;
+  font-size: 30rpx;
+}
+.jf-list .ly .fr{
+  float: right;
+  color: #227ef4
+}
+.jf-dialog{
+  padding: 20rpx;
+  line-height: 2.2em;
+}
+.jf-dialog input{
+  border:1px solid #e2e2e2;
+  line-height: 30px;
+  height: 30px;
+  padding: 0 10rpx;
+}

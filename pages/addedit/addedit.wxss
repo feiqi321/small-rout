@@ -1,0 +1,49 @@
+/* pages/addedit/addedit.wxss */
+.edit-wp{
+  margin-top: 20rpx;
+  background: #fff;
+  padding-left: 15rpx;
+  overflow: hidden;
+}
+.form-item{
+  border-bottom:1px solid #e2e2e2;
+  font-size: 28rpx; 
+  line-height: 80rpx;
+  overflow: hidden
+}
+.form-item label{
+  width: 100%;
+  display: flex;
+}
+.form-item .label{
+  width: 6em;
+}
+.form-item .input-area{
+  flex: 1;
+  padding-left: 20rpx;
+}
+.form-item input{
+  height: 80rpx;
+}
+.form-item textarea{
+  display: inline-block;
+  width: 100%;
+}
+.btn-wrapper{
+  padding: 40rpx 0;
+  overflow: hidden;
+}
+.btn-wrapper text{
+  display: block;
+  width: 40%;
+  margin: 0 0 0 6.66%;
+  text-align: center;
+  float: left;
+  background: #4cd964;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 90rpx;
+}
+.btn-wrapper .delete{
+  background: #d9644c;
+}

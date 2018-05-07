@@ -1,0 +1,51 @@
+<view class="ct">
+  <!-- bottom -->
+  <view class='bottom'>
+    <view class='xz'>
+      <icon type="{{allChecked!==true?'circle':'success'}}" size="23" color="{{allChecked!==true?'':'#ff4444'}}" bindtap="checkTap" />全选
+      <!-- <radio value="{{allChecked}}" checked="{{allChecked}}" /> 全选 -->
+    </view>
+    <view class='js'>
+      结算
+    </view>
+    <view class='detail'>
+      <text class='red'>合计：￥{{total}}</text>
+      <text class='gray'>运费：￥0</text>
+    </view>
+  </view>
+
+  <!-- list -->
+  <block wx:if="{{listData.length>0}}">
+    <view class='table-de-tr' wx:for="{{listData}}" wx:for-item="item" wx:key="item.id" wx:for-index="index">
+      <view class='xz'>
+        <icon type="{{item.checked!==true?'circle':'success'}}" size="23" color="{{item.checked!==true?'':'#ff4444'}}" bindtap='checkout' data-item="{{index}}" />
+        <!-- bindtap="checkTap" -->
+      </view>
+      <view class='img'>
+        <image src='http://xu-game.xubei.com/game/QJ7nmczbe4.png'></image>
+      </view>
+      <view class='detail'>
+        <view class='title'>{{item.title}}</view>
+        <view class='des'>{{item.des}}</view>
+        <view class='n-p'>
+          <text class='money'>${{item.total}}</text>
+          <text>X{{item.num}}</text>
+        </view>
+      </view>
+      <view class='delete' data-item="{{index}}">
+        <text bindtap='delete'>删除商品</text>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='empty'>
+      <text>购物车快饿瘪了T.T</text>
+      <text class='tip'>快给我挑点宝贝</text>
+      <text class='btn' bindtap='gotolist'>去逛逛</text>
+    </view>
+  </block>
+
+  <!-- list -->
+
+
+</view>

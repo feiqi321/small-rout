@@ -1,0 +1,12 @@
+/* componets/search.wxss */
+.search-box{
+  padding: 10rpx;
+  background: #f5f5f5;
+}
+.search-box input{
+  background: #fff;
+  font-size: 24rpx;
+  padding: 0 10px;
+  height: 40rpx;
+  line-height: 40rpx;
+}

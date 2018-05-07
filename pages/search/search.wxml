@@ -1,0 +1,2 @@
+<view> <mysearch id="mysearch" bindsearchdone="search"></mysearch> </view>
+<listitem wx:for="{{listData}}" listData="{{item}}" wx:for-item="item"></listitem>

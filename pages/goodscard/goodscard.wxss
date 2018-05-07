@@ -1,0 +1,176 @@
+/* pages/goodscard/goodscard.wxss */
+
+.ct {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 120rpx;
+}
+
+.bottom {
+  position: fixed;
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 10;
+}
+
+.bottom .xz {
+  float: left;
+  width: 140rpx;
+  padding-left: 20rpx;
+  font-size: 28rpx;
+}
+
+.bottom .xz icon {
+  margin-right: 15rpx;
+  vertical-align: middle;
+  margin-top: 23rpx;
+}
+
+.bottom .js {
+  width: 240rpx;
+  float: right;
+  text-align: center;
+  color: #fff;
+  background: #fe4343;
+  font-size: 30rpx;
+}
+
+.bottom .detail {
+  margin: 0 240rpx 0 160rpx;
+  padding: 10rpx 20rpx;
+  text-align: right;
+  line-height: 50rpx;
+  font-size: 26rpx;
+}
+
+.bottom .detail text {
+  display: block;
+}
+
+.bottom .detail .red {
+  color: #f00;
+}
+
+.bottom .detail .gray {
+  color: #ccc;
+}
+
+/* top */
+
+.table-de-tr {
+  box-sizing: border-box;
+  background: #fff;
+  border-bottom: 1px solid #e1e1e1;
+  overflow: hidden;
+  padding: 15rpx 0;
+  margin-top: 15rpx;
+}
+.table-de-tr .xz{
+  width: 80rpx;
+  text-align: center;
+  vertical-align: middle;
+  float: left;
+  height:180rpx;
+
+}
+.table-de-tr .xz icon{
+  vertical-align: middle;
+  margin-top: 70rpx;
+}
+.table-de-tr .img{
+  width: 180rpx;
+  height: 180rpx;
+  float: left;
+}
+.table-de-tr .img image{
+  width: 100%;
+  height: 100%;
+}
+.table-de-tr  .detail{
+  margin-left: 270rpx;
+  margin-right: 0;
+  padding-left: 10rpx;
+  line-height: 50rpx;
+  position: relative;
+  padding-right: 20rpx;
+  height: 180rpx;
+}
+.table-de-tr  .detail .title{
+  font-size: 28rpx;
+  height: 50rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+   width: 100%;
+}
+.table-de-tr  .detail .des{
+  font-size: 24rpx;
+  height: 50rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  color: #ccc;
+}
+.table-de-tr  .detail .n-p{
+  font-size: 28rpx;
+  height: 50rpx;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #555;
+  text-align: right;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.table-de-tr  .detail .n-p .money{
+  color: #f00;
+  float: left;
+}
+.table-de-tr  .delete{
+  border-top:1px solid #e1e1e1;
+  padding: 15rpx 20rpx 0 15rpx; 
+  margin-top: 20rpx;
+  text-align: right;
+}
+.table-de-tr  .delete text{
+  line-height: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  padding: 0 10rpx;
+  border: 1px solid #e1e1e1;
+  border-radius: 3px;
+  font-size: 28rpx;
+  color: #999;
+}
+.empty{
+  padding: 120rpx 0;
+  text-align: center;
+  line-height: 3em;
+  font-size: 30rpx;
+}
+.empty text{
+  display: block;
+}
+.empty .tip{
+  font-size: 28rpx;
+  color: #ccc;
+}
+.empty .btn{
+  width: 170rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1px solid #ff4747;
+  border-radius: 6rpx;
+  color: #ff4747;
+  margin: 0 auto;
+
+}

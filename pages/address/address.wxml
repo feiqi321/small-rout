@@ -1,0 +1,10 @@
+<!--pages/address/address.wxml-->
+<view class='add' bindtap='addEdit'><text>新增地址</text></view>
+<view class='add-wp' wx:if="{{listData.length>0}}">
+  <view class='add-item' wx:for="{{listData}}">
+    <image src='../../image/edit.png'></image>
+    <text class='phone'>{{item.name}} {{item.phone}}</text>
+    <text class="title">{{item.detail}}</text>
+  </view>
+</view>
+<view class='empty' wx:else>您还有么有地址，可以点击底部按钮新建地址</view>

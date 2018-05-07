@@ -1,0 +1,19 @@
+<view class='nav'>
+ <navigator url="/pages/store_list/store_list" hover-class="navigator-hover" open-type="switchTab" class='navigator-hover'>福利认领区</navigator>
+ <navigator url="/pages/jfq/jfq" hover-class="navigator-hover">积分交换区</navigator>
+</view>
+<view class="yhj">
+<view class='hd'>优惠卷</view>
+<view class='card-item'>
+  <view>蚂蚁金福</view>
+  <view class='des'>淘宝特权会员卡</view>
+</view>
+<view class='card-item'>
+  <view>蚂蚁金福</view>
+  <view class='des'>淘宝特权会员卡</view>
+</view>
+</view>
+<view class='db'>
+<view class='hd'>代币</view>
+<view class='db-item' wx:for="{{dblist}}" wx:for-item="item" wx:key="item.id">{{item.text}}</view>
+</view>

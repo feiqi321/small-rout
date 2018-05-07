@@ -1,0 +1,23 @@
+/* components/itemlist/itemlist.wxss */
+.listitem{
+  margin-bottom: 20rpx;
+  background: #fff;
+  padding: 20rpx;
+  overflow: hidden;
+}
+.listitem image{
+  float:left;
+  width: 140rpx;
+  height: 120rpx;
+}
+.listitem .list-hd{
+  margin-left: 160rpx;
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 10rpx;
+}
+.listitem .price{
+  color: #f00;
+  margin-left: 160rpx;
+  margin-top: 20rpx;
+}

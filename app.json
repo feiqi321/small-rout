@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/goods/goods_details",
+    "pages/cart/cart",
+    "pages/store_list/store_list",
+    "pages/list/list",
+    "pages/model/model",
+    "pages/money/money",
+    "pages/viplist/viplist",
+    "pages/search/search",
+    "pages/jfq/jfq",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/usercenter/usercenter",
+    "pages/goods_detail/goods_detail",
+    "pages/goodscard/goodscard",
+    "pages/address/address",
+    "pages/addedit/addedit",
+    "pages/orderlist/orderlist",
+    "pages/comment/comment",
+    "pages/orderPay/orderpay"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#333",
+    "navigationBarTitleText": "商城系统",
+    "navigationBarTextStyle": "light",
+    "backgroundColor": "#e61773",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#f00",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/icon-03.png",
+        "selectedIconPath": "image/icon-h-03.png"
+      },
+      {
+        "pagePath": "pages/store_list/store_list",
+        "text": "会员专享",
+        "iconPath": "image/icon-04.png",
+        "selectedIconPath": "image/icon-h-04.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "商品会场",
+        "iconPath": "image/icon-12.png",
+        "selectedIconPath": "image/icon-h-12.png"
+      },
+      {
+        "pagePath": "pages/usercenter/usercenter",
+        "text": "我的",
+        "iconPath": "image/icon-07.png",
+        "selectedIconPath": "image/icon-h-07.png"
+      }
+    ]
+  }
+}

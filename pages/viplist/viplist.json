@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "宝玛outlets",
+  "usingComponents": {
+    "listitem": "/components/itemlist/itemlist"
+  }
+}

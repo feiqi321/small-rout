@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mysearch": "/components/search/search",
+    "listitem": "/components/itemlist/itemlist"
+  },
+  "navigationBarTitleText": "首页"
+}

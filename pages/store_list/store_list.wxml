@@ -4,13 +4,9 @@
 </view>
 <view class="yhj">
 <view class='hd'>优惠卷</view>
-<view class='card-item'>
-  <view>蚂蚁金福</view>
-  <view class='des'>淘宝特权会员卡</view>
-</view>
-<view class='card-item'>
-  <view>蚂蚁金福</view>
-  <view class='des'>淘宝特权会员卡</view>
+<view class='card-item'  wx:for="{{cardlist}}"  wx:for-item="card" wx:key="card.id">
+  <view>现金券</view>
+  <view class='des'> {{card.amount}}元现金券</view>
 </view>
 </view>
 <view class='db'>

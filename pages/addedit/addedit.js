@@ -5,14 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    address:{
+      linkman:"189",
+      tel:"345",
+      detail:"123"
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    var id = 1;
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/1',
+      method: 'GET',
+      success: function (res) {
+        that.setData({
+          listData: res.data.rows
+        })
+      }
+
+    })
   },
 
   /**

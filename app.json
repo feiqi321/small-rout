@@ -26,8 +26,8 @@
     "navigationBarBackgroundColor": "#333",
     "navigationBarTitleText": "商城系统",
     "navigationBarTextStyle": "light",
-    "backgroundColor": "#e61773",
-    "backgroundTextStyle": "light",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "dark",
     "enablePullDownRefresh": true
   },
   "tabBar": {

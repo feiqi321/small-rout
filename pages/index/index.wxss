@@ -110,6 +110,13 @@
   width: 100%;
   border-radius: 6px;
 }
+.home-fx .fx-item text{
+  height: 2em;
+  line-height: 2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .home-fx .fx-item .f-tb{
   font-size: 24rpx;
   text-align: right;

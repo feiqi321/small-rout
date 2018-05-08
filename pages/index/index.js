@@ -17,7 +17,7 @@ Page({
       {
         text: '注册登录',
         picture: '../../image/3@2x.png',
-        path:'/pages/login/login'
+        path: '/pages/login/login'
       },
       {
 
@@ -82,8 +82,8 @@ Page({
         img: 'http://p6wd1cjvv.bkt.clouddn.com/tempfenxiang.png',
         url: 'http://www.baidu.com',
         title: '儿童山轮车',
-        share:'范彬彬',
-        num:123
+        share: '范彬彬',
+        num: 123
       },
       {
         img: 'http://p6wd1cjvv.bkt.clouddn.com/tempfenxiang.png',
@@ -134,18 +134,29 @@ Page({
       url: '/pages/search/search'
     })
   },
+  queryFx(cb) {
+    var that = this;
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/discuss/firstView',
+      method: 'GET',
+      success: function (res) {
+        that.setData({
+          listData: res.data.rows
+        });
+        cb&&cb();
+      }
+
+    })
+  },
+  onPullDownRefresh(){
+    var that = this;
+    that.queryFx(function(){
+      wx.stopPullDownRefresh();
+    });
+  },
   onLoad: function () {
     var that = this;
-      wx.request({
-        url: 'https://www.isxcxbackend1.cn/bmh_shop/discuss/firstView',
-        method: 'GET',
-        success:function(res) {
-          that.setData({
-            listData: res.data.rows
-          })
-        }
-
-      })
+    that.queryFx();
   },
 
 })

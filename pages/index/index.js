@@ -17,36 +17,41 @@ Page({
       {
         text: '注册登录',
         picture: '../../image/3@2x.png',
-        path: '/pages/login/login'
+        path: '/pages/login/login',
+        urlType: 'tab'
       },
       {
 
         text: '产品中心',
         picture: '../../image/15@2x.png',
-        path: '/pages/list/list'
+        path: '/pages/list/list',
+        urlType: 'tab'
       },
       {
 
         text: '新品推荐',
         picture: '../../image/4@2x.png',
-        path: '/pages/list/list'
+        path: '/pages/list/list',
+        urlType: 'tab'
       },
       {
 
         text: '特价专区',
         picture: '../../image/11@2x.png',
-        path: '/pages/list/list'
+        path: '/pages/list/list',
+        urlType: 'tab'
       },
       {
 
         text: '代币交易',
         picture: '../../image/2@2x.png',
-        path: '/pages/list/list'
+        path: '/pages/jfq/jfq'
       },
       {
 
         text: '代币充值',
         picture: '../../image/@2x.png',
+        path: '/pages/dbcz/dbcz'
       },
       {
 
@@ -89,10 +94,22 @@ Page({
 
   },
   //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  bindViewTap: function (e) {
+    console.log(e)
+    var index = e.currentTarget.dataset.index;
+    if (this.data.cate_src[index].path) {
+      if (this.data.cate_src[index].urlType) {
+        wx.switchTab({
+          url: this.data.cate_src[index].path
+        })
+      } else {
+        wx.navigateTo({
+          url: this.data.cate_src[index].path
+        })
+      }
+
+    }
+
   },
   goSearch() {
     wx.navigateTo({
@@ -108,14 +125,14 @@ Page({
         that.setData({
           listData: res.data.rows
         });
-        cb&&cb();
+        cb && cb();
       }
 
     })
   },
-  onPullDownRefresh(){
+  onPullDownRefresh() {
     var that = this;
-    that.queryFx(function(){
+    that.queryFx(function () {
       wx.stopPullDownRefresh();
     });
   },

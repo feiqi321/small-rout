@@ -15,7 +15,7 @@
 <view bindtap='goSearch'> <mysearch id="mysearch" isDisabled="true"></mysearch> </view>
 <!-- 八个分类菜单-->
 <view class='home-nav'>
-  <view class="home-nav-item" wx:for="{{cate_src}}" wx:for-item="item">
+  <view class="home-nav-item" wx:for="{{cate_src}}" wx:for-item="item" bindtap='bindViewTap' data-index="{{index}}">
     <image mode="{{item.mode}}" src="{{item.picture}}"></image>
     <view class="section_title">{{item.text}}</view>
   </view>

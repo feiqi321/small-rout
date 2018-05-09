@@ -1,2 +1,3 @@
-<!--pages/dbcz/dbcz.wxml-->
-<text>pages/dbcz/dbcz.wxml</text>
+<view class='dbjy'>
+<image src='http://www.hanxinbank.com/images-site/qrcode-wx01.png'  mode="widthFix"></image>
+</view>

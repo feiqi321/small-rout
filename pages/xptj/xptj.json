@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "新品推荐",
+    "usingComponents": {
+      "listitem": "/components/itemlist/itemlist"
+    }
+}

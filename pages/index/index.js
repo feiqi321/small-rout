@@ -31,15 +31,13 @@ Page({
 
         text: '新品推荐',
         picture: '../../image/4@2x.png',
-        path: '/pages/list/list',
-        urlType: 'tab'
+        path: '/pages/xptj/xptj'
       },
       {
 
         text: '特价专区',
         picture: '../../image/11@2x.png',
-        path: '/pages/list/list',
-        urlType: 'tab'
+        path: '/pages/tjsp/tjsp'
       },
       {
 
@@ -75,11 +73,13 @@ Page({
 
         text: '商家介绍',
         picture: '../../image/17@2x.png',
+        path:'/pages/shopjs/shopjs'
       },
       {
 
         text: '联系我们',
         picture: '../../image/16@2x.png',
+        path:'/pages/contact/contact'
       }
     ],
     listData: [

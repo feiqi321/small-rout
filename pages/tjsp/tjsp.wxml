@@ -1,0 +1,3 @@
+ <view>
+ <listitem wx:for="{{listData}}" listData="{{item}}" wx:for-item="item"></listitem>
+ </view>

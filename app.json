@@ -19,7 +19,12 @@
     "pages/addedit/addedit",
     "pages/orderlist/orderlist",
     "pages/comment/comment",
-    "pages/orderPay/orderpay"
+    "pages/orderPay/orderpay",
+    "pages/dbcz/dbcz",
+    "pages/contact/contact",
+    "pages/shopjs/shopjs",
+    "pages/tjsp/tjsp",
+    "pages/xptj/xptj"
   ],
   "window": {
     "navigationBarBackgroundColor": "#333",

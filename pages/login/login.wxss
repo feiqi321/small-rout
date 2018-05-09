@@ -1,9 +1,13 @@
-.nav{
+.nav {
   background: #fff;
   height: 40px;
   margin-bottom: 20rpx;
+  text-align: center;
+  line-height: 38px;
+  font-size: 16px;
 }
-.nav navigator{
+
+.nav navigator {
   width: 50%;
   display: inline-block;
   text-align: center;
@@ -11,26 +15,55 @@
   font-size: 16px;
   box-sizing: border-box;
 }
-.navigator-hover{
+
+.navigator-hover {
   border-bottom: 2px solid #f00;
   background: #fff;
 }
-.login{
+
+.login {
   padding: 40rpx;
   background: #fff;
 }
-.login input{
-    width: 100%;
-    height: 48px;
-    padding-left: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    color: #333;
-    -webkit-appearance: none;
-    margin-bottom: 30rpx;
-    font-size: 28rpx;
+
+.login input {
+  width: 100%;
+  height: 48px;
+  padding-left: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  -webkit-appearance: none;
+  margin-bottom: 30rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
 }
-.login .des{
+
+.login .yzm {
+  width: 60%;
+  display: inline-block;
+  float: left;
+}
+
+.login .getcode {
+  width: 38%;
+  height: 48px;
+  padding-left: 10px;
+  border: 1px solid #44bb01;
+  border-radius: 4px;
+  color: #fff;
+  -webkit-appearance: none;
+  margin-bottom: 30rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  display: inline-block;
+  float: right;
+  line-height: 48px;
+  background: #44bb01;
+  text-align: center;
+}
+
+.login .des {
   line-height: 2em;
   font-size: 28rpx;
   color: #999;

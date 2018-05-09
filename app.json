@@ -12,7 +12,6 @@
     "pages/search/search",
     "pages/jfq/jfq",
     "pages/login/login",
-    "pages/register/register",
     "pages/usercenter/usercenter",
     "pages/goods_detail/goods_detail",
     "pages/goodscard/goodscard",
@@ -54,7 +53,7 @@
         "selectedIconPath": "image/icon-h-12.png"
       },
       {
-        "pagePath": "pages/usercenter/usercenter",
+        "pagePath": "pages/login/login",
         "text": "我的",
         "iconPath": "image/icon-07.png",
         "selectedIconPath": "image/icon-h-07.png"

@@ -55,15 +55,18 @@ Page({
 
         text: '会员福利',
         picture: '../../image/7@2x.png',
+        path: '/pages/store_list/store_list'
       }, {
 
         text: '会员分享',
         picture: '../../image/31@2x.png',
+        path: '/pages/wq/wq'
       },
       {
 
         text: '交易纠纷处理',
         picture: '../../image/8@2x.png',
+        path: '/pages/wq/wq'
       },
       {
 

@@ -1,0 +1,9 @@
+<view class="title">
+  <input type='text' placeholder='添加标题'></input>
+</view>
+<view class='detail'>
+  <textarea></textarea>
+</view>
+<view class='btnwrapper'>
+<text>提交</text>
+</view>

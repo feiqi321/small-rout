@@ -24,7 +24,8 @@
     "pages/contact/contact",
     "pages/shopjs/shopjs",
     "pages/tjsp/tjsp",
-    "pages/xptj/xptj"
+    "pages/xptj/xptj",
+    "pages/wq/wq"
   ],
   "window": {
     "navigationBarBackgroundColor": "#333",

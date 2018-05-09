@@ -4,7 +4,7 @@
     <label>
       <text class='label'>联系人</text>
       <view class='input-area'>
-        <input type='text'></input>
+        <input type='text' value='{{address.linkman}}'></input>
       </view>
     </label>
   </view>
@@ -12,7 +12,7 @@
     <label>
       <text class='label'>电话</text>
       <view class='input-area'>
-        <input type='number'></input>
+        <input type='number' value='{{address.tel}}'></input>
       </view>
     </label>
   </view>
@@ -20,7 +20,7 @@
     <label>
       <text class='label'>详细地址</text>
       <view class='input-area'>
-        <textarea></textarea>
+        <textarea>{{address.detail}}</textarea>
       </view>
     </label>
   </view>

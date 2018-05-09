@@ -3,7 +3,7 @@
 <view class='add-wp' wx:if="{{listData.length>0}}">
   <view class='add-item' wx:for="{{listData}}">
     <image src='../../image/edit.png'></image>
-    <text class='phone'>{{item.name}} {{item.phone}}</text>
+    <text class='phone'>{{item.linkman}} {{item.tel}}</text>
     <text class="title">{{item.detail}}</text>
   </view>
 </view>

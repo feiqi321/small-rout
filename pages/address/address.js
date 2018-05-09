@@ -6,30 +6,7 @@ Page({
    */
   data: {
     listData:[
-      {
-        id:1,
-        name:'朱先生',
-        detail:'光谷大道高新五路当代国际城20栋1单元301',
-        phone:'15927216320'
-      },
-      {
-        id: 2,
-        name: '朱先生1',
-        detail: '光谷大道高新五路当代国际城20栋1单元301',
-        phone: '15927216320'
-      },
-      {
-        id: 3,
-        name: '朱先生2',
-        detail: '光谷大道高新五路当代国际城20栋1单元301',
-        phone: '15927216320'
-      },
-      {
-        id: 4,
-        name: '朱先生3',
-        detail: '光谷大道高新五路当代国际城20栋1单元301',
-        phone: '15927216320'
-      }
+      
     ]
   },
   addEdit(e){
@@ -41,7 +18,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+      var that = this;
+      wx.request({
+        url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/myAddressList?userId=18',
+        method: 'GET',
+        success: function (res) {
+          that.setData({
+            listData: res.data.rows
+          })
+        }
+
+      })
   },
 
   /**

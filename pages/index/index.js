@@ -72,6 +72,7 @@ Page({
 
         text: '商家入驻',
         picture: '../../image/12@2x.png',
+        path: '/pages/sjrz/sjrz'
       }, {
 
         text: '商家介绍',

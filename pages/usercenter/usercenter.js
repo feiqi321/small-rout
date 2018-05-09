@@ -39,6 +39,11 @@ Page({
   onLoad: function () {
     var that = this
     //调用应用实例的方法获取全局数据
+    // wx.setStorageSync('userName', objData.userName);
+    // wx.setStorageSync('userPassword', objData.userPassword);
+    // var userName = wx.getStorageSync('userName');
+    // var userPassword = wx.getStorageSync('userPassword');
+
     app.getUserInfo(function (userInfo) {
       //更新数据
       that.setData({

@@ -7,10 +7,10 @@ Component({
     listData: {
       type: Object,
       value: {
-        img: 'http://mmbiz.qpic.cn/mmbiz_jpg/zKZ7UQnGpOFIQrI4tNrlbNLdK7TLicwYCColZoENm2WF2LEhGngkL7OG4vicV47cYKYCgLTau2VZNbX6ic46oEVaw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1',
-        url: 'http://www.baidu.com',
-        price: 100,
-        title: '儿童山轮车1'
+        // img: 'http://mmbiz.qpic.cn/mmbiz_jpg/zKZ7UQnGpOFIQrI4tNrlbNLdK7TLicwYCColZoENm2WF2LEhGngkL7OG4vicV47cYKYCgLTau2VZNbX6ic46oEVaw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1',
+        // url: 'http://www.baidu.com',
+        // price: 100,
+        // title: '儿童山轮车1'
       }
     },
   },
@@ -27,9 +27,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    gotoDetail(){
+    gotoDetail(e){
+      var id = parseInt(e.currentTarget.dataset.id);
       wx.navigateTo({
-        url: '/pages/goods_detail/goods_detail'
+        url: '/pages/goods_detail/goods_detail?id=' + id
       })
     }
   }

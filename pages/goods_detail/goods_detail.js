@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    goodsId:null,//商品id
     imgSrc:'http://xu-game.xubei.com/game/GTQaFr2DEw.jpg',
+    goodDetail:{},
     'gwcbj':'/image/gwc.png',
     showDetail:true,
     showCard:false,
@@ -33,7 +35,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var _this=this;
+    _this.setData({
+      goodsId:options.id
+    });
+    _this.query();
   },
   gotoCard(){
     console.log(111)
@@ -76,6 +82,19 @@ Page({
     console.log(this.data.num);
     this.hideCard();
   },
+  query(cb){
+    const _this=this;
+    wx.request({
+      url: 'http://yapi.demo.qunar.com/mock/6878/bmh_shop/product/info/' + this.data.goodsId, //仅为示例，并非真实的接口地址
+      success: function (res) {
+        console.log(res);
+        _this.setData({
+          goodDetail: res.data.data
+        })
+        cb && cb();
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -108,7 +127,10 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log('下拉')
+    var that = this;
+    that.query(function () {
+      wx.stopPullDownRefresh();
+    });
   },
 
   /**

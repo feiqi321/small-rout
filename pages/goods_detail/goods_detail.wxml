@@ -1,13 +1,13 @@
 <view class='top-img'>
-  <image src='{{imgSrc}}'></image>
+  <image src='{{goodDetail.img_url}}'></image>
 </view>
 <view class='m-detail'>
   <view class='hd'>
-    <text class='title'>汉堡王（深圳市民中心店22736）</text>
-    <text class='money'>￥999.00</text>
+    <text class='title'>{{goodDetail.product_name}}</text>
+    <text class='money'>￥{{goodDetail.price}}</text>
     <view class='des'>
       <text class='yf'>运费：0.00</text>
-      <text>销量：999</text>
+      <text>销量：{{goodDetail.sellNum}}</text>
     </view>
   </view>
   <view class='bd'>
@@ -17,7 +17,7 @@
     </view>
     <view class='tab-content'>
       <view wx:if="{{showDetail}}">
-        【下载上号器】复制下方链接到电脑浏览器地址栏，回车跳转进入虚贝上号器下载页面，点击“PC上号”按钮，进行下载；
+        {{goodDetail.detail}}
       </view>
       <view wx:else class='cjjl'>
         <view class='th'>
@@ -48,7 +48,7 @@
   <view class='box'>
     <view class='detail'>
       <image src='{{imgSrc}}'></image>
-      <text>汉堡王（深圳市民中心店22736）</text>
+      <text>{{goodDetail.product_name}}</text>
       <text class='red'>￥198</text>
     </view>
     <view class='buynum'>

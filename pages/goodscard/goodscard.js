@@ -8,51 +8,7 @@ Page({
     allChecked: true,
     total:0,
     listData: [
-      {
-        title: '[BT租号]绝地求生steam账号',
-        des: '满飞满螃各种圣衣，光环！勿打生存，不然扣押金！',
-        total: '1990',
-        num: 1,
-        price:25,
-        id: '001',
-        checked: true
-      },
-      {
-        title: '[BT租号]绝地求生steam账号',
-        des: '满飞满螃各种圣衣，光环！勿打生存，不然扣押金！',
-        total: '1990',
-        num: 3,
-        price: 25,
-        id: '003',
-        checked: true
-      },
-      {
-        title: '[BT租号]绝地求生steam账号',
-        des: '满飞满螃各种圣衣，光环！勿打生存，不然扣押金！',
-        total: '1990',
-        num: 1,
-        id: '002',
-        price: 25,
-        checked: true
-      },
-      {
-        title: '[BT租号]绝地求生steam账号',
-        des: '满飞满螃各种圣衣，光环！勿打生存，不然扣押金！',
-        total: '1990',
-        num: 5,
-        id: '005',
-        price: 25,
-        checked: true
-      },
-      {
-        title: '[BT租号]绝地求生steam账号',
-        des: '满飞满螃各种圣衣，光环！勿打生存，不然扣押金！',
-        total: '1990',
-        num: 4,
-        id: '006',
-        price: 25,
-        checked: true
-      }
+      
     ]
 
   },
@@ -93,7 +49,8 @@ Page({
     var total=0;
     list.forEach(function(item){
       if (item.checked){
-        total += item.price * item.num;
+        console.info(item.price + "**" + item.productNum)
+        total += item.price * item.productNum;
       }
     });
     this.setData({
@@ -119,6 +76,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/shoppingCart/list?userId=18',
+      method: 'GET',
+      success: function (res) {
+        that.setData({
+          listData: res.data.rows
+        });
+        cb && cb();
+      }
+
+    })
+
     this.computTotal();
   },
 

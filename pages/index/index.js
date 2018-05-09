@@ -84,41 +84,6 @@ Page({
         title: '儿童山轮车',
         share: '范彬彬',
         num: 123
-      },
-      {
-        img: 'http://p6wd1cjvv.bkt.clouddn.com/tempfenxiang.png',
-        url: 'http://www.baidu.com',
-        title: '儿童山轮车',
-        share: '范彬彬',
-        num: 123
-      },
-      {
-        img: 'http://p6wd1cjvv.bkt.clouddn.com/tempfenxiang.png',
-        url: 'http://www.baidu.com',
-        title: '儿童山轮车',
-        share: '范彬彬',
-        num: 123
-      },
-      {
-        img: 'http://p6wd1cjvv.bkt.clouddn.com/tempfenxiang.png',
-        url: 'http://www.baidu.com',
-        title: '儿童山轮车',
-        share: '范彬彬',
-        num: 1223
-      },
-      {
-        img: 'http://p6wd1cjvv.bkt.clouddn.com/tempfenxiang.png',
-        url: 'http://www.baidu.com',
-        title: '儿童山轮车',
-        share: '范彬彬',
-        num: 1223
-      },
-      {
-        img: 'http://p6wd1cjvv.bkt.clouddn.com/tempfenxiang.png',
-        url: 'http://www.baidu.com',
-        title: '儿童山轮车',
-        share: '范彬彬',
-        num: 1223
       }
     ]
 

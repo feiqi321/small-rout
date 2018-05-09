@@ -22,14 +22,14 @@
         <!-- bindtap="checkTap" -->
       </view>
       <view class='img'>
-        <image src='http://xu-game.xubei.com/game/QJ7nmczbe4.png'></image>
+        <image src='{{item.url}}'></image>
       </view>
       <view class='detail'>
-        <view class='title'>{{item.title}}</view>
-        <view class='des'>{{item.des}}</view>
+        <view class='title'>{{item.productName}}</view>
+        <view class='des'></view>
         <view class='n-p'>
-          <text class='money'>${{item.total}}</text>
-          <text>X{{item.num}}</text>
+          <text class='money'>${{item.price}}</text>
+          <text>X{{item.productNum}}</text>
         </view>
       </view>
       <view class='delete' data-item="{{index}}">

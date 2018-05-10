@@ -43,7 +43,7 @@ Page({
   },
   gotoCard(){
     console.log(111)
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/goodscard/goodscard'
     })
   },
@@ -101,12 +101,17 @@ Page({
           productId: this.data.goodsId,
           productNum: this.data.num
         },
+        method:'POST',
         success: function (res) {
           console.log(res);
-          this.hideCard();
-          // _this.setData({
-          //   goodDetail: res.data.data
-          // });
+          if (res.data.success){
+            _this.hideCard();
+            wx.showToast({
+              title: '加入购物车成功！',
+              icon: 'success',
+              duration: 2000
+            });
+          }
         }
       })
     }

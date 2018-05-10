@@ -10,7 +10,6 @@ Page({
   },
   listenerPhoneInput: function (e) {
     this.data.phone = e.detail.value;
-
   },
 
   /**
@@ -45,7 +44,7 @@ Page({
             duration: 2000
           });
         }else{
-          wx.setStorageSync('userName', res.data.data.username);
+          wx.setStorageSync('userName', res.data.data.id);
           wx.switchTab({
             url: '/pages/usercenter/usercenter'
           })

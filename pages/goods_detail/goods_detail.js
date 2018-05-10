@@ -79,8 +79,38 @@ Page({
     });
   },
   submit(){
-    console.log(this.data.num);
-    this.hideCard();
+    const _this=this;
+    if (!wx.getStorageSync('userName')) {
+      wx.showToast({
+        title: '请先登录！',
+        icon: 'none',
+        duration: 2000,
+        complete: function () {
+          wx.navigateTo({
+            url: '/pages/login/login'
+          })
+        }
+      });
+      return;
+    }else{
+      var id = wx.getStorageSync('userName');
+      wx.request({
+        url: 'https://www.isxcxbackend1.cn/bmh_shop/shoppingCart/update',
+        data: {
+          userId: id,
+          productId: this.data.goodsId,
+          productNum: this.data.num
+        },
+        success: function (res) {
+          console.log(res);
+          this.hideCard();
+          // _this.setData({
+          //   goodDetail: res.data.data
+          // });
+        }
+      })
+    }
+    
   },
   query(cb){
     const _this=this;

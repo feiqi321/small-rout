@@ -60,7 +60,7 @@
          "selectedIconPath": "image/icon-h-04.png"
        },
       {
-        "pagePath": "pages/login/login",
+        "pagePath": "pages/usercenter/usercenter",
         "text": "我的",
         "iconPath": "image/icon-07.png",
         "selectedIconPath": "image/icon-h-07.png"

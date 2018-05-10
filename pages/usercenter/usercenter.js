@@ -44,10 +44,11 @@ Page({
   onLoad: function () {
     var that = this
     if (!wx.getStorageSync('userName')){
-      wx.switchTab({
+      wx.navigateTo({
         url: '/pages/login/login'
       })
     }
+    console.log(wx.getStorageSync('userName'))
     app.getUserInfo(function (userInfo) {
       //更新数据
       that.setData({
@@ -55,10 +56,19 @@ Page({
       })
     })
   },
-  onUnload: function () {
-    console.log(111)
-    wx.switchTab({
-      url: '/pages/index/index'
-    })
+  onShow(){
+    if (!wx.getStorageSync('userName')) {
+      wx.showToast({
+        title: '请先登录！',
+        icon: 'none',
+        duration: 2000,
+        complete: function () {
+          wx.navigateTo({
+            url: '/pages/login/login'
+          })
+        }
+      });
+    }
   }
+  
 })

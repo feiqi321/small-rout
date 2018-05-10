@@ -46,7 +46,7 @@ Page({
           });
         }else{
           wx.setStorageSync('userName', res.data.data.username);
-          wx.navigateTo({
+          wx.switchTab({
             url: '/pages/usercenter/usercenter'
           })
         }
@@ -87,7 +87,7 @@ Page({
    */
   onLoad: function (options) {
     if (wx.getStorageSync('userName')) {
-      wx.navigateTo({
+      wx.switchTab({
         url: '/pages/usercenter/usercenter'
       })
     }
@@ -104,7 +104,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // if (wx.getStorageSync('userName')) {
+    //   wx.navigateTo({
+    //     url: '/pages/usercenter/usercenter'
+    //   })
+    // }
   },
 
   /**
@@ -118,7 +122,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
   },
 
   /**

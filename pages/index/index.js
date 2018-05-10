@@ -17,7 +17,7 @@ Page({
       {
         text: '注册登录',
         picture: '../../image/3@2x.png',
-        path: '/pages/login/login',
+        path: '/pages/usercenter/usercenter',
         urlType: 'tab'
       },
       {

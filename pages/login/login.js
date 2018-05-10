@@ -46,7 +46,7 @@ Page({
           });
         }else{
           wx.setStorageSync('userName', res.data.data.username);
-          wx.redirectTo({
+          wx.navigateTo({
             url: '/pages/usercenter/usercenter'
           })
         }

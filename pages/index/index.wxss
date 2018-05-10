@@ -89,8 +89,8 @@
 .home-fx .hd{
   text-align: center;
   font-size: 30rpx;
-  line-height: 35rpx;
-  margin-top: 10rpx;
+  line-height: 70rpx;
+  height: 70rpx;
 }
 .home-fx .wrapper{
   overflow: hidden;

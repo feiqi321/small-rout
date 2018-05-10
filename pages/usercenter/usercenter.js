@@ -44,7 +44,7 @@ Page({
   onLoad: function () {
     var that = this
     if (!wx.getStorageSync('userName')){
-      wx.navigateTo({
+      wx.switchTab({
         url: '/pages/login/login'
       })
     }
@@ -53,6 +53,12 @@ Page({
       that.setData({
         userInfo: userInfo
       })
+    })
+  },
+  onUnload: function () {
+    console.log(111)
+    wx.switchTab({
+      url: '/pages/index/index'
     })
   }
 })

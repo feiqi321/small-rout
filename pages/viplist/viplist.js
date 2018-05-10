@@ -1,14 +1,9 @@
 // 字体tabtab切换
 Page({
   data: {
-    listData: [
-     // {
-      //  img: 'http://mmbiz.qpic.cn/mmbiz_jpg/zKZ7UQnGpOFIQrI4tNrlbNLdK7TLicwYCColZoENm2WF2LEhGngkL7OG4vicV47cYKYCgLTau2VZNbX6ic46oEVaw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1',
-        //url: 'http://www.baidu.com',
-        //price: 100,
-        //title: '儿童山轮车'
-      //}
-    ]
+    pageIndex: 1,
+    isEnd: false,
+    listData: []
   },
   upper: function (e) {
     console.log(e)
@@ -20,20 +15,60 @@ Page({
     console.log(e)
   },
   onReachBottom(e) {
-    console.log(111)
+    this.setData({
+      pageIndex: this.data.pageIndex + 1
+    });
+    if (!this.data.isEnd) {
+      this.queryList();
+    } else {
+      wx.showToast({
+        title: '没有更多数据了！',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+  },
+  onPullDownRefresh() {
+    var that = this;
+    that.setData({
+      pageIndex: 1
+    });
+    that.queryList(function () {
+      wx.stopPullDownRefresh();
+    });
+  },
+  queryList(cb) {
+    var _this = this;
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/product/info/outlets', //仅为示例，并非真实的接口地址
+      data: {
+        page: _this.data.pageIndex,
+        rows: 10
+      },
+      // header: {
+      //   'content-type': 'application/json' // 默认值
+      // },
+      success: function (res) {
+        if (!res.data.rows || res.data.rows.length < 10) {
+          _this.setData({
+            isEnd: true
+          });
+        } else {
+          _this.setData({
+            isEnd: false
+          });
+        }
+        var data = _this.data.pageIndex === 1 ? res.data.rows : _this.data.listData.concat(res.data.rows);
+        _this.setData({
+          listData: data
+        });
+        cb && cb();
+      }
+    })
   },
   onLoad: function () {
     var that = this;
-    wx.request({
-      url: 'https://www.isxcxbackend1.cn/bmh_shop/product/info/outlets?page=1&rows=10',
-      method: 'GET',
-      success: function (res) {
-        that.setData({
-          listData: res.data.rows
-        })
-      }
-
-    })
+    that.queryList();
   },
 
 })

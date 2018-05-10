@@ -30,7 +30,7 @@ Page({
       return;
     }
     wx.request({
-      url: 'http://yapi.demo.qunar.com/mock/6878/app/account/login',
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/app/account/login',
       data: {
         username: this.data.phone,
         sms: this.data.code
@@ -65,7 +65,7 @@ Page({
       return;
     }
     wx.request({
-      url: 'http://yapi.demo.qunar.com/mock/6878/sms/sendSms',
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/sms/sendSms',
       data:{
         tel: this.data.phone
       },

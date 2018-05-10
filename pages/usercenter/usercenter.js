@@ -8,23 +8,28 @@ Page({
       icon: '../../image/iconfont-dingdan.png',
       text: '我的订单',
       path: '/pages/orderlist/orderlist'
-    }, {
-      icon: '../../image/iconfont-card.png',
-      text: '我的代金券',
-    }, {
+    }, 
+    //{
+    //  icon: '../../image/iconfont-card.png',
+    //  text: '我的福利',
+    //  path: '/pages/store_list/store_list'
+    //},
+     {
       icon: '../../image/iconfont-icontuan.png',
       text: '购物车',
-      path:'/pages/goodscard/goodscard'
+      path: '/pages/goodscard/goodscard'
     }, {
       icon: '../../image/iconfont-shouhuodizhi.png',
       text: '收货地址管理',
-      path:'/pages/address/address'
+      path: '/pages/address/address'
     }, {
       icon: '../../image/iconfont-kefu.png',
-      text: '商家入驻'
+      text: '商家入驻',
+      path: '/pages/sjrz/sjrz'
     }, {
       icon: '../../image/iconfont-help.png',
-      text: '关于我们'
+      text: '联系我们',
+      path: '/pages/contact/contact'
     }]
   },
   gotoUrl(e){

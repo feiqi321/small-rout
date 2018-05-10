@@ -6,8 +6,8 @@ Page({
     //motto: 'Hello World',
     //userInfo: {},
     lunbo_src: [
-      'https://img02.wzhouhui.net/optm/ad/2017/03/08/orig/d51c19b84bbc45a8d15b460fcd6ae99768527638.jpg',
-      'https://img02.wzhouhui.net/optm/ad/2017/03/08/orig/e22542db46cefea5dfb51f7c7ba8d3817824e65c.jpg'
+      'http://p6wd1cjvv.bkt.clouddn.com/banner1.jpg',
+      'http://p6wd1cjvv.bkt.clouddn.com/banner2.jpg'
     ],
     indicatorDots: true,
     autoplay: true,

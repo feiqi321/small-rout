@@ -1,6 +1,6 @@
 <view class='nav'>
  <navigator url="/pages/list/list" hover-class="navigator-hover" open-type="switchTab">商品中心</navigator>
- <navigator url="/pages/viplist/viplist" hover-class="navigator-hover" class='navigator-hover'>宝玛outlets</navigator>
+ <navigator url="/pages/viplist/viplist" hover-class="navigator-hover" class='navigator-hover'>特价商品</navigator>
  <view>
  <listitem wx:for="{{listData}}" listData="{{item}}" wx:for-item="item"></listitem>
  </view>

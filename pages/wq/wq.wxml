@@ -1,9 +1,9 @@
 <view class="title">
-  <input type='text' placeholder='添加标题'></input>
+  <input type='text' placeholder='添加标题' bindinput="listenerTitleInput"></input>
 </view>
 <view class='detail'>
-  <textarea></textarea>
+  <textarea bindinput="listenerContextInput" placeholder='添加标题'></textarea>
 </view>
 <view class='btnwrapper'>
-<text>提交</text>
+<text  bindtap="submit" >提交</text>
 </view>

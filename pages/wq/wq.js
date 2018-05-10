@@ -5,6 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
+    title: '',
+    context: '',
+  },
+  listenerTitleInput: function (e) {
+    
+    this.data.title = e.detail.value;
+
+  },
+  listenerContextInput: function (e) {
+    this.data.context = e.detail.value;
 
   },
   addImg() {
@@ -120,7 +130,59 @@ Page({
   onReachBottom: function () {
 
   },
+  submit() {
+  
+    if (this.data.title == "") {
+      wx.showToast({
+        title: '请填写申诉标题',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    if (this.data.context == "") {
+      wx.showToast({
+        title: '请填写申诉内容',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/appeal/update',
+      data: {
+        userId:"13",
+        title: this.data.title,
+        context: this.data.context,
+        status:0
+      },
+      method: 'POST',
+      success: function (res) {
+        
+        if (!res.data.success) {
+          wx.showToast({
+            title: res.data.errorMsg || '网络异常！',
+            icon: 'none',
+            duration: 2000
+          });
+        } else {
+          wx.showToast({
+            title: '申诉请求已发送',
+            icon: 'none',
+            duration: 2000
+          });
+          setTimeout(function () {
+            wx.switchTab({
+              url: '/pages/index/index'
+            })
+          }, 800)
+          
+        }
+      }
 
+    })
+  },
   /**
    * 用户点击右上角分享
    */

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    allChecked: true,
+    allChecked: false,
     total:0,
     listData: [
       
@@ -71,25 +71,33 @@ Page({
       url: '/pages/list/list'
     })
   },
-  // 方法end
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  query(cb){
     var that = this;
     wx.request({
       url: 'https://www.isxcxbackend1.cn/bmh_shop/shoppingCart/list?userId=18',
       method: 'GET',
       success: function (res) {
+        console.log(res);
         that.setData({
           listData: res.data.rows
         });
+        that.computTotal();
         cb && cb();
       }
-
     })
-
-    this.computTotal();
+  },
+  // 方法end
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.query();
+  },
+  onPullDownRefresh() {
+    var that = this;
+    that.query(function () {
+      wx.stopPullDownRefresh();
+    });
   },
 
   /**

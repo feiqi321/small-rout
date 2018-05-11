@@ -10,9 +10,17 @@ Page({
     ]
   },
   addEdit(e){
-    wx.navigateTo({
-      url: '/pages/addedit/addedit',
-    })
+    var id = e.currentTarget.dataset.id;
+    if(id){
+      wx.navigateTo({
+        url: '/pages/addedit/addedit?id=' + id,
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/addedit/addedit',
+      })
+    }
+    
   },
   /**
    * 生命周期函数--监听页面加载
@@ -25,6 +33,7 @@ Page({
         url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/myAddressList?userId=' + userId,
         method: 'GET',
         success: function (res) {
+          console.log(res)
           that.setData({
             listData: res.data.rows
           })

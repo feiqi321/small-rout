@@ -2,7 +2,7 @@
 <view class='add' bindtap='addEdit'><text>新增地址</text></view>
 <view class='add-wp' wx:if="{{listData.length>0}}">
   <view class='add-item' wx:for="{{listData}}">
-    <image src='../../image/edit.png'></image>
+    <image src='../../image/edit.png' bindtap='addEdit' data-id="{{item.id}}"></image>
     <text class='phone'>{{item.linkman}} {{item.tel}}</text>
     <text class="title">{{item.detail}}</text>
   </view>

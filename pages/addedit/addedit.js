@@ -12,26 +12,33 @@ Page({
     }
   },
   listenerlinkmanInput: function (e) {
-    this.data.linkman = e.detail.value;
+    this.data.address.linkman = e.detail.value;
   },
   listenerTelInput: function (e) {
-    this.data.tel = e.detail.value;
+    this.data.address.tel = e.detail.value;
   },
   listenerAddressInput: function (e) {
-    this.data.detail = e.detail.value;
+    this.data.address.detail = e.detail.value;
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
-    var id = 1;
+    var id = options.id;
+    var url;
+    if(!id){
+      url='https://www.isxcxbackend1.cn/bmh_shop/address/info/1'
+    }else{
+      url = 'https://www.isxcxbackend1.cn/bmh_shop/address/info/'+id
+    }
     wx.request({
-      url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/1',
+      url: url,
       method: 'GET',
       success: function (res) {
+        console.log(res)
         that.setData({
-          listData: res.data.rows
+          address: res.data.data,
         })
       }
 
@@ -88,7 +95,7 @@ Page({
   },
   submit() {
     var userId = wx.getStorageSync("userName");
-    if (this.data.linkman == "" || this.data.tel == "" || this.data.detail == "") {
+    if (this.data.address.linkman == "" || this.data.address.tel == "" || this.data.address.detail == "") {
       wx.showToast({
         title: '请完善你的联系人信息',
         icon: 'none',
@@ -100,9 +107,9 @@ Page({
       url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/update',
       data: {
         userid:userId,
-        linkman: this.data.linkman,
-        tel: this.data.tel,
-        detail: this.data.detail
+        linkman: this.data.address.linkman,
+        tel: this.data.address.tel,
+        detail: this.data.address.detail
       },
       method: 'POST',
       success: function (res) {
@@ -115,7 +122,7 @@ Page({
           });
         } else {
           wx.showToast({
-            title: '申诉请求已发送',
+            title: '地址处理成功！',
             icon: 'none',
             duration: 2000
           });

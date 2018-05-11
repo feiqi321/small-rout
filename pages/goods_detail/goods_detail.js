@@ -17,16 +17,6 @@ Page({
         buyName:'张三',
         time:'2017-09-25',
         num:1
-      },
-      {
-        buyName: '张三',
-        time: '2017-09-25',
-        num: 2
-      },
-      {
-        buyName: '张三',
-        time: '2017-09-25',
-        num: 3
       }
     ]
   },

@@ -19,8 +19,10 @@ Page({
    */
   onLoad: function (options) {
       var that = this;
+      var userId = wx.getStorageSync("userName")
+      console.info(userId);
       wx.request({
-        url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/myAddressList?userId=18',
+        url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/myAddressList?userId=' + userId,
         method: 'GET',
         success: function (res) {
           that.setData({

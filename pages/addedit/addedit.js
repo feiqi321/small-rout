@@ -6,12 +6,20 @@ Page({
    */
   data: {
     address:{
-      linkman:"189",
-      tel:"345",
-      detail:"123"
+      linkman:"",
+      tel:"",
+      detail:""
     }
   },
-
+  listenerlinkmanInput: function (e) {
+    this.data.linkman = e.detail.value;
+  },
+  listenerTelInput: function (e) {
+    this.data.tel = e.detail.value;
+  },
+  listenerAddressInput: function (e) {
+    this.data.detail = e.detail.value;
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -77,5 +85,76 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  submit() {
+    var userId = wx.getStorageSync("userName");
+    if (this.data.linkman == "" || this.data.tel == "" || this.data.detail == "") {
+      wx.showToast({
+        title: '请完善你的联系人信息',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/update',
+      data: {
+        userid:userId,
+        linkman: this.data.linkman,
+        tel: this.data.tel,
+        detail: this.data.detail
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res)
+        if (!res.data.success) {
+          wx.showToast({
+            title: res.data.errorMsg || '网络异常！',
+            icon: 'none',
+            duration: 2000
+          });
+        } else {
+          wx.showToast({
+            title: '申诉请求已发送',
+            icon: 'none',
+            duration: 2000
+          });
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '/pages/address/address'
+            })
+          }, 800)
+          
+        }
+      }
+
+    })
+  },
+  delete() {
+    
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/app/account/login',
+      data: {
+        username: this.data.phone,
+        sms: this.data.code
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log(res)
+        if (!res.data.success) {
+          wx.showToast({
+            title: res.data.errorMsg || '网络异常！',
+            icon: 'none',
+            duration: 2000
+          });
+        } else {
+          wx.setStorageSync('userName', res.data.data.id);
+          wx.switchTab({
+            url: '/pages/address/address'
+          })
+        }
+      }
+
+    })
   }
 })

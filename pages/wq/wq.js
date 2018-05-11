@@ -148,11 +148,11 @@ Page({
       });
       return;
     }
-    
+    var userId = wx.getStorageSync("userName");
     wx.request({
       url: 'https://www.isxcxbackend1.cn/bmh_shop/appeal/update',
       data: {
-        userId:"13",
+        userId: userId,
         title: this.data.title,
         context: this.data.context,
         status:0

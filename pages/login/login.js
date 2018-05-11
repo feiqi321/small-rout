@@ -45,6 +45,8 @@ Page({
           });
         }else{
           wx.setStorageSync('userName', res.data.data.id);
+          wx.setStorageSync('amt', res.data.data.balance);
+          wx.setStorageSync('tel', res.data.data.username);
           wx.switchTab({
             url: '/pages/usercenter/usercenter'
           })

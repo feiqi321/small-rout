@@ -14,7 +14,7 @@
 }
 
 .userinfo-avatar {
-  width: 128rpx;
+  width: 250rpx;
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;

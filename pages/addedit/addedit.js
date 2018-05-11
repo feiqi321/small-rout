@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    currentId:"",
     address:{
       linkman:"",
       tel:"",
@@ -26,6 +27,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     var id = options.id;
+    that.data.currentId = options.id;
     var url;
     if(!id){
       url='https://www.isxcxbackend1.cn/bmh_shop/address/info/1'
@@ -104,7 +106,7 @@ Page({
       return;
     }
     wx.request({
-      url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/update',
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/',
       data: {
         userid:userId,
         linkman: this.data.address.linkman,
@@ -138,14 +140,11 @@ Page({
     })
   },
   delete() {
-    
+    var id = this.data.currentId;
+    console.info(id);
     wx.request({
-      url: 'https://www.isxcxbackend1.cn/bmh_shop/app/account/login',
-      data: {
-        username: this.data.phone,
-        sms: this.data.code
-      },
-      method: 'GET',
+      url: 'https://www.isxcxbackend1.cn/bmh_shop//address/info/'+id,
+      method: 'DELETE',
       success: function (res) {
         console.log(res)
         if (!res.data.success) {
@@ -155,8 +154,8 @@ Page({
             duration: 2000
           });
         } else {
-          wx.setStorageSync('userName', res.data.data.id);
-          wx.switchTab({
+          
+          wx.navigateTo({
             url: '/pages/address/address'
           })
         }

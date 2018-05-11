@@ -7,6 +7,7 @@ Page({
   data: {
     orderNo:null,
     userID:null,
+    total:null,
     address: {
       linkman: '朱文诚',
       detail: '湖北省武汉市高新五路长航社区',
@@ -39,13 +40,32 @@ Page({
       method:'POST',
       data:{
         "userId": this.data.userID,
-        "totalAmt": "500",
+        "totalAmt": this.data.total,
         "orderIds": this.data.orderNo
       },
       success: function (res) {
-        if (res.data.success) {
-          _this.setData({
-            listData: res.data.rows
+        console.log(res)
+        if(res.data.success){
+          wx.showToast({
+            title: '购买成功',
+            icon: 'success',
+            duration: 2000,
+            complete:function(){
+              wx.navigateTo({
+                url: '/pages/orderlist/orderlist',
+              })
+            }
+          })
+        }else{
+          wx.showToast({
+            title: res.data.errorMsg,
+            icon: 'fail',
+            duration: 2000,
+            // complete: function () {
+            //   wx.navigateTo({
+            //     url: '/pages/orderlist/orderlist',
+            //   })
+            // }
           })
         }
       }
@@ -57,10 +77,10 @@ Page({
     wx.request({
       url: 'https://www.isxcxbackend1.cn/bmh_shop/app/product/orderToBuy?orderIds=' + this.data.orderNo,
       success: function (res) {
-        console.log(res)
         if (res.data.success) {
           _this.setData({
-            listData: res.data.rows
+            listData: res.data.data.list,
+            total:res.data.data.totalAmt
           })
         }
       }

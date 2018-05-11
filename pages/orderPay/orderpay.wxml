@@ -17,9 +17,9 @@
     <view class='title'>{{item.productName}}</view>
     <!-- <view class='des'>{{item.des}}</view> -->
     <view class='n-p'>
-      <text class='money'>${{item.price}}</text>
+      <text class='money'>￥{{item.price}}</text>
       <text>X{{item.productNum}}</text>
     </view>
   </view>
 </view>
-<view class='bot-tool'>合计： <text class='money'>￥288.00</text><text class='sub' bindtap='submit'>提交订单</text></view>
+<view class='bot-tool'>合计： <text class='money'>￥{{total}}</text><text class='sub' bindtap='submit'>提交订单</text></view>

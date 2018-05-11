@@ -6,6 +6,8 @@ Page({
    */
   data: {
     hiddenmodalput: true,  
+    phone:null,
+    jfnumber:null,
     objdata:{
      // totalPoint:1099,
      // inPoint:300,
@@ -20,6 +22,12 @@ Page({
      // }
     ]
   },
+  listenerphoneInput: function (e) {
+    this.data.phone = e.detail.value;
+  },
+  listenernumInput: function (e) {
+    this.data.jfnumber = e.detail.value;
+  },
   modalinput: function () {
     this.setData({
       hiddenmodalput: !this.data.hiddenmodalput
@@ -33,9 +41,32 @@ Page({
   },
   //确认  
   confirm: function () {
-    this.setData({
-      hiddenmodalput: true
+    var that = this;
+    var userId = wx.getStorageSync("userName");
+    if (!userId || !this.data.phone || !this.data.jfnumber){
+      wx.showToast({
+        title: '请完善信息',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/point/update',
+      method: 'POST',
+      data:{
+        sendUserId: userId,
+        acceptUsername: this.data.phone,
+        amount: this.data.jfnumber
+      },
+      success: function (res) {
+        console.log(res);
+      }
+
     })
+    // this.setData({
+    //   hiddenmodalput: true
+    // })
   } ,
   /**
    * 生命周期函数--监听页面加载

@@ -20,7 +20,7 @@
 </view>
 <modal hidden="{{hiddenmodalput}}" title="转让积分" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
     <view class='jf-dialog'>
-    <view>用户手机号<input type='number'placeholder="请输入用户积分" auto-focus/>  </view>
-    <view>转让积分<input type='number'/>  </view>
+    <view>用户手机号<input type='number' value='{{phone}}' bindinput="listenerphoneInput" placeholder="请输入用户积分" />  </view>
+    <view>转让积分<input type='number' value='{{jfnumber}}' bindinput="listenernumInput"/>  </view>
     </view>
 </modal>  

@@ -9,9 +9,9 @@ Page({
     userID:null,
     total:null,
     address: {
-      linkman: '朱文诚',
-      detail: '湖北省武汉市高新五路长航社区',
-      tel: '15927216320'
+      linkman: '',
+      detail: '',
+      tel: ''
     },
     listData: [
       // {

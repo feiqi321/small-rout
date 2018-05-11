@@ -30,7 +30,7 @@ Page({
     that.data.currentId = options.id;
     var url;
     if(!id){
-      url='https://www.isxcxbackend1.cn/bmh_shop/address/info/1'
+      url='https://www.isxcxbackend1.cn/bmh_shop/address/info/0'
     }else{
       url = 'https://www.isxcxbackend1.cn/bmh_shop/address/info/'+id
     }

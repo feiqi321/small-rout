@@ -3,7 +3,7 @@
 import config from "../../config.js"
 const app = getApp()
 
-var userId = 50;
+var userId = wx.getStorageSync("userName");
 
 Page({
     data: {

@@ -3,7 +3,7 @@
 const app = getApp()
 import config from "../../config.js"
 
-var userId =  wx.getStorageSync("userName");;
+
 
 Page({
     data: {
@@ -30,6 +30,7 @@ Page({
     // 收藏取消收藏
     storeTap:function(){
         var self=this;
+        var userId = wx.getStorageSync("userName");
         wx.request({
             url: config.storeShare,
             data: {
@@ -55,6 +56,8 @@ Page({
     // 发表评论
     writeCommitTap: function (e){
         var self=this;
+        var userId = wx.getStorageSync("userName");
+        console.info(userId)
         wx.request({
             url: config.writeCommit,
             data: {
@@ -91,6 +94,7 @@ Page({
     refresh:function(){
         var self = this;
         // var detailUrl = config.getProductDetail + self.data.id;
+        var userId = wx.getStorageSync("userName");
         wx.request({
             url: config.getProductDetail,
             data: {

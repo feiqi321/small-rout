@@ -1,5 +1,5 @@
 //获取应用实例
-var app = getApp()
+var app = getApp();
 Page({
   data: {
     userInfo: {
@@ -48,12 +48,12 @@ Page({
   },
   onLoad: function () {
     var that = this
-    if (!wx.getStorageSync('userName')){
-      wx.navigateTo({
-        url: '/pages/login/login'
-      })
-    }
-    console.log(wx.getStorageSync('tel'))
+    // if (!wx.getStorageSync('userName')){
+    //   wx.navigateTo({
+    //     url: '/pages/login/login'
+    //   })
+    // }
+    // console.log(wx.getStorageSync('tel'))
     
     
    // var userInfo = {};
@@ -83,6 +83,6 @@ Page({
         }
       });
     }
-  }
+  },
   
 })

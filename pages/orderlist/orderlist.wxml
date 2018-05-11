@@ -8,23 +8,26 @@
 <view class='order-wrapper'>
   <view class='order-item' wx:for="{{listData}}">
     <view class='order-status'>订单编号：{{item.orderNo}}
-      <text>{{item.orderStatusText}}</text>
+      <!-- <text>{{item.orderStatusText}}</text> -->
+      <text wx:if="{{item.status==0}}"> 待付款 </text>
+      <text wx:if="{{item.status==1}}"> 待发货 </text>
+      <text wx:if="{{item.status==2}}"> 已发货 </text>
     </view>
-    <view class='detail'>
-      <image src="//img11.360buyimg.com/mobilecms/s80x80_jfs/t8119/4/2101514182/84322/3686a33a/59c467b3N091a4d78.jpg!q90.webp"></image>
+    <view class='detail' wx:for="{{item.list}}" wx:for-item="shopitem">
+      <image src="{{shopitem.url}}"></image>
       <view>
-        <text>{{item.shopTitle}}</text>
-        <!-- <text class='fr'>￥40.00</text> -->
+        <text>{{shopitem.productName}}</text>
+         <text class='fr'>￥40.00</text> 
       </view>
-      <view class='fr'>X{{item.num}}</view>
+      <view class='fr'>X{{shopitem.sellNum}}</view>
     </view>
-    <view class='go-more'>查看全部{{item.shopNum}}件商品</view>
+     <!-- <view class='go-more'>共{{item.sellNum}}件商品</view>  -->
     <view class='total'>合计：
-      <text>￥{{item.total}}</text>
+      <text>￥{{item.realTotalAmt}}</text>
     </view>
-    <view class='tool' wx:if='{{item.orderStatus==0||item.orderStatus==2}}'>
-      <text wx:if='{{item.orderStatus==0}}' bindtap='gotoPay' data-id="{{item.orderNo}}">去付款</text>
-      <text wx:if='{{item.orderStatus==2}}' bindtap='gotocom' data-id="{{item.orderNo}}">评论</text>
+    <view class='tool' wx:if='{{item.status==0||item.status==2}}'>
+      <text wx:if='{{item.status==0}}' bindtap='gotoPay' data-id="{{item.orderNo}}">去付款</text>
+      <text wx:if='{{item.status==2}}' bindtap='gotocom' data-id="{{item.orderNo}}">评论</text>
     </view>
   </view>
   <view wx:if="{{listData.length==0}}" class='empty'>

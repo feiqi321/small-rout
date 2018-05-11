@@ -11,33 +11,15 @@ Page({
     listData: [
       {
         orderNo: '72718931738',
-        imgUrl: '//img10.360buyimg.com/N6/s60x60_jfs/t394/330/395080578/53572/ae74ec1e/541a97fdN6b408ceb.jpg',
-        shopTitle: '乐扣乐扣（lock&lock）缤纷保温杯 LHC4020G（330ml）绿色',
-        num: 2,
-        total: '73.00',
-        shopNum: 1,
-        orderStatus: 0,
+        list:[{
+          productName:'',
+          sellNum:'',
+          url:''
+        }],
+        realTotalAmt: '73.00',
+        sellNum : 1,
+        status: 0,
         orderStatusText: '待支付'
-      },
-      {
-        orderNo: '72718931738',
-        imgUrl: '//img10.360buyimg.com/N6/s60x60_jfs/t394/330/395080578/53572/ae74ec1e/541a97fdN6b408ceb.jpg',
-        shopTitle: '乐扣乐扣（lock&lock）缤纷保温杯 LHC4020G（330ml）绿色',
-        num: '2',
-        total: '73.00',
-        shopNum: 1,
-        orderStatus: 1,
-        orderStatusText: '已发货'
-      },
-      {
-        orderNo: '72718931738',
-        imgUrl: '//img10.360buyimg.com/N6/s60x60_jfs/t394/330/395080578/53572/ae74ec1e/541a97fdN6b408ceb.jpg',
-        shopTitle: '乐扣乐扣（lock&lock）缤纷保温杯 LHC4020G（330ml）绿色',
-        num: 2,
-        total: '73.00',
-        shopNum: 1,
-        orderStatus: 2,
-        orderStatusText: '已完成'
       }
     ]
   },
@@ -46,6 +28,7 @@ Page({
     this.setData({
       navIndex: index
     });
+    this.querylist()
   },
   gotocom(e){
     const id = parseInt(e.currentTarget.dataset.id);
@@ -75,8 +58,13 @@ Page({
         status: status
       },
       success: function (res) {
-        console.log(res)
-         
+        console.log(res);
+        console.log(res.data.success)
+        if (res.data.success){
+          _this.setData({
+            listData:res.data.rows
+          })
+        }
       }
     })
   },

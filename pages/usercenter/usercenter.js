@@ -3,9 +3,9 @@ var app = getApp()
 Page({
   data: {
     userInfo: {
-      avatarUrl:"",
-      nickName:"",
-      amt:0
+      //avatarUrl:"",
+      //nickName:"",
+      //amt:0
     },
     projectSource: 'https://github.com/liuxuanqiang/wechat-weapp-mall',
     userListInfo: [{
@@ -56,17 +56,19 @@ Page({
     console.log(wx.getStorageSync('tel'))
     
     
-    var userInfo = {};
-    userInfo.nickName = wx.getStorageSync('tel');
-    userInfo.amt = wx.getStorageSync('amt');
-    userInfo.avatarUrl = "http://p6wd1cjvv.bkt.clouddn.com/head.jpg";
-    that.setData({
-      userInfo: userInfo
-    })
-    //app.getUserInfo(function (userInfo) {
+   // var userInfo = {};
+   // userInfo.nickName = wx.getStorageSync('tel');
+   // userInfo.amt = wx.getStorageSync('amt');
+   // userInfo.avatarUrl = "http://p6wd1cjvv.bkt.clouddn.com/head.jpg";
+   // that.setData({
+   //   userInfo: userInfo
+   // })
+    app.getUserInfo(function (userInfo) {
       //更新数据
-      
-    //})
+      that.setData({
+        userInfo: userInfo
+      })
+    })
   },
   onShow(){
     if (!wx.getStorageSync('userName')) {

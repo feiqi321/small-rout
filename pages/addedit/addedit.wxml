@@ -20,7 +20,7 @@
     <label>
       <text class='label'>详细地址</text>
       <view class='input-area'>
-        <textarea bindinput="listenerAddressInput">{{address.detail}}</textarea>
+        <textarea bindinput="listenerAddressInput" value='{{address.detail}}'></textarea>
       </view>
     </label>
   </view>

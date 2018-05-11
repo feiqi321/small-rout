@@ -7,9 +7,7 @@ Page({
   data: {
     allChecked: false,
     total:0,
-    listData: [
-      
-    ]
+    listData: []
 
   },
   // 方法
@@ -60,11 +58,23 @@ Page({
   delete(e){
     var index = parseInt(e.currentTarget.dataset.item);
     var list = this.data.listData;
+    var id = list[index].id;
     list.splice(index,1);
     this.setData({
       listData:list
     });
     this.computTotal();
+    this.queryDelete(id);
+  },
+  queryDelete(id) {
+    var that = this;
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/shoppingCart/delete/'+id,
+      method: 'DELETE',
+      success: function (res) {
+        console.log(res);
+      }
+    })
   },
   gotolist(){
     wx.switchTab({

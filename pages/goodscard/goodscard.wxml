@@ -32,8 +32,8 @@
           <text>X{{item.productNum}}</text>
         </view>
       </view>
-      <view class='delete' data-item="{{index}}">
-        <text bindtap='delete'>删除商品</text>
+      <view class='delete'>
+        <text bindtap='delete' data-item="{{index}}">删除商品</text>
       </view>
     </view>
   </block>

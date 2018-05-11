@@ -25,7 +25,8 @@
     "pages/tjsp/tjsp",
     "pages/xptj/xptj",
     "pages/wq/wq",
-    "pages/sjrz/sjrz"
+    "pages/sjrz/sjrz",
+    "pages/store_list/store_list"
   ],
   "window": {
     "navigationBarBackgroundColor": "#333",

@@ -1,5 +1,5 @@
 <view class='nav'>
- <navigator url="/pages/store_list/store_list" hover-class="navigator-hover" open-type="switchTab">福利认领区</navigator>
+ <navigator url="/pages/store_list/store_list" hover-class="navigator-hover">福利认领区</navigator>
  <navigator url="/pages/jfq/jfqt" hover-class="navigator-hover" class='navigator-hover'>积分交换区</navigator>
 </view>
 <view class='my-jf'>

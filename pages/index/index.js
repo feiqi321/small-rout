@@ -92,24 +92,24 @@ Page({
   },
   //事件处理函数
   bindViewTap: function (e) {
-    //console.log(e)
-    ///var index = e.currentTarget.dataset.index;
-    //if (this.data.cate_src[index].path) {
-    //  if (this.data.cate_src[index].urlType) {
-    //    wx.switchTab({
-    //      url: this.data.cate_src[index].path
-    //    })
-    //  } else {
-    //    wx.navigateTo({
-    //      url: this.data.cate_src[index].path
-    //    })
-    //  }
-//
-    //}
-    var item = event.currentTarget.dataset['item'];
-    wx.navigateTo({
-      url: '../detail/detail?id=' + item.id
-    })
+    console.log(e)
+    var index = e.currentTarget.dataset.index;
+    if (this.data.cate_src[index].path) {
+     if (this.data.cate_src[index].urlType) {
+       wx.switchTab({
+         url: this.data.cate_src[index].path
+       })
+     } else {
+       wx.navigateTo({
+         url: this.data.cate_src[index].path
+       })
+     }
+
+    }
+    // var item = event.currentTarget.dataset['item'];
+    // wx.navigateTo({
+    //   url: '../detail/detail?id=' + item.id
+    // })
 
   },
   goSearch() {

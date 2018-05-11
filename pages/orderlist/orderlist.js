@@ -6,6 +6,7 @@ Page({
    */
   data: {
     navIndex:0,
+    userId:null,
     loading:false,
     listData: [
       {
@@ -61,11 +62,46 @@ Page({
   pl() {
     
   },
+  querylist(){
+    var _this=this;
+    var status = _this.data.navIndex-1;
+    if(status<0){
+      status=null;
+    }
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn//bmh_shop/order/info/listOrder', //仅为示例，并非真实的接口地址
+      data: {
+        userId: _this.data.userId,
+        status: status
+      },
+      success: function (res) {
+        console.log(res)
+         
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (!wx.getStorageSync('userName')) {
+      wx.showToast({
+        title: '请先登录！',
+        icon: 'none',
+        duration: 2000,
+        complete: function () {
+          wx.navigateTo({
+            url: '/pages/login/login'
+          })
+        }
+      });
+    }else{
+      var userId = wx.getStorageSync('userName');
+      this.setData({
+        userId:userId
+      })
+      this.querylist();
+    }
   },
 
   /**
@@ -93,7 +129,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    
   },
 
   /**

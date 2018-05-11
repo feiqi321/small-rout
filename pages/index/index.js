@@ -87,13 +87,6 @@ Page({
       }
     ],
     listData: [
-      {
-        img: 'http://p6wd1cjvv.bkt.clouddn.com/tempfenxiang.png',
-        url: 'http://www.baidu.com',
-        title: '儿童山轮车',
-        share: '范彬彬',
-        num: 123
-      }
     ]
 
   },
@@ -124,12 +117,19 @@ Page({
       url: '/pages/search/search'
     })
   },
+  gotoShare(e){
+    var id=e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/detail/detail?id='+id,
+    })
+  },
   queryFx(cb) {
     var that = this;
     wx.request({
       url: 'https://www.isxcxbackend1.cn/bmh_shop/discuss/firstView',
       method: 'GET',
       success: function (res) {
+        console.log(res)
         that.setData({
           listData: res.data.rows
         });

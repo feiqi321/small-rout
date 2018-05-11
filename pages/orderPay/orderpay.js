@@ -8,9 +8,9 @@ Page({
     orderNo:null,
     userID:null,
     address: {
-      name: '朱文诚',
+      linkman: '朱文诚',
       detail: '湖北省武汉市高新五路长航社区',
-      phone: '15927216320'
+      tel: '15927216320'
     },
     listData: [
       // {
@@ -57,9 +57,10 @@ Page({
     wx.request({
       url: 'https://www.isxcxbackend1.cn/bmh_shop/app/product/orderToBuy?orderIds=' + this.data.orderNo,
       success: function (res) {
+        console.log(res)
         if (res.data.success) {
           _this.setData({
-            listData:res.data.rows
+            listData: res.data.rows
           })
         }
       }
@@ -72,10 +73,9 @@ Page({
       url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/default/' + this.data.userID,
       success: function (res) {
         if (res.data.success) {
-          console.log(res)
-          // _this.setData({
-          //   listData: res.data.rows
-          // })
+          _this.setData({
+            address: res.data.data
+          })
         }
       }
     })

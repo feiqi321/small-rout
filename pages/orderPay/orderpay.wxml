@@ -1,8 +1,8 @@
 <view class='address' bindtap='changeAddress'>
   <block wx:if='{{address}}'>
     <image src='../../image/yjt.png'></image>
-    <view class='user'>收货人：朱文成 <text>15872459666</text></view>
-    <view class='detail'>收货地址：湖北省武汉市高新五路长航社区</view>
+    <view class='user'>收货人：{{address.linkman}} <text>{{address.tel}}</text></view>
+    <view class='detail'>收货地址：{{address.detail}}</view>
   </block>
   <block wx:else>
     <view>选择地址</view>

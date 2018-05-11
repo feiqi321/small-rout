@@ -60,7 +60,7 @@ Page({
 
         text: '会员分享',
         picture: '../../image/31@2x.png',
-        path: '/pages/wq/wq'
+        path: '/pages/fxindex/fxindex'
       },
       {
 

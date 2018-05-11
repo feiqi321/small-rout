@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+    <scroll-view scroll-y class='contractScrollView' bindscrolltolower='scrolltolower'>
+        <view class="infolist">
+            <view class="infoItem {{item.position?'':'upstyle'}}"wx:for-items="{{infoList}}" wx:key="{{item.id}}" data-item="{{item}}">
+                <view class="placeholder" wx:if="{{item.position}}"></view>
+                <image class='infoImage' bindtap="bindViewTap" data-item="{{item}}" src="{{item.url}}"  class='img'></image>
+                <view class='contentInfo'>
+                    <span class='contentInfoText'>{{item.title}}</span>
+                    <view class='userInfo'>
+                        <image class="userImage" src='../../image/user.png' class='img'></image>
+                        <text>{{item.userId}}</text>
+                        <span class='dianzandiv' bindtap="thumbsUpTap" data-item="{{item}}">
+                            <i class="iconfont icon-unie60b"></i>
+                            <span>{{item.thumbs}}</span>
+                        </span>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

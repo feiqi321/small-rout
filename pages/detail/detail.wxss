@@ -1,0 +1,167 @@
+/**index.wxss**/
+
+.container {
+    background-color: #f5f8fa;
+}
+
+.swiper {
+    height: 600rpx;
+    width: 100%;
+}
+
+.swiper image {
+    height: 100%;
+    width: 100%;
+}
+
+.detailUserInfo {
+    background-color: white;
+    width: 710rpx;
+    padding: 20rpx;
+}
+
+.detailUserInfo .userinfo {
+    position: relative;
+    border-bottom: 1rpx solid #e6e6e6;
+    padding-bottom: 14rpx;
+}
+
+.detailUserInfo .detailtext {
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    color: #333;
+    line-height: 40rpx;
+}
+
+.detailUserInfo .timeinfo {
+    margin-top: 30rpx;
+    font-size: 24rpx;
+    color: #999;
+    position: relative;
+}
+
+.detailUserInfo .timeinfo .count {
+    position: absolute;
+    right: 0;
+}
+
+.detailUserInfo .timeinfo .zancount {
+    margin-left: 20rpx;
+}
+
+.detailUserInfo .userinfo .userImage {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+}
+
+.detailUserInfo .userinfo text {
+    color: #333;
+    margin-left: 10rpx;
+    position: relative;
+    bottom: 20rpx;
+    font-size: 24rpx;
+}
+
+.detailUserInfo .userinfo i {
+    position: absolute;
+    right: 0;
+    top: 15rpx;
+    font-size: 40rpx;
+}
+
+.commentRegion {
+    margin-top: 20rpx;
+    background-color: white;
+    width: 710rpx;
+    padding: 20rpx;
+    padding-top: 0;
+}
+
+.commentRegion .commentTitle {
+    font-size: 22rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+    color: #333;
+}
+
+.commentRegion .commentTitle .commentNum {
+    float: right;
+    color: #999;
+}
+
+.commentRegion .writecomment {
+    margin-top: 15rpx;
+     /* border-bottom: 1rpx solid #e9e9e9; */
+}
+
+.commentRegion .writecomment image {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    border: 1rpx solid #e9e9e9;
+    display: inline-block;
+    position: relative;
+    bottom: 10rpx;
+}
+
+.commentRegion .writecomment textarea {
+    width: 460rpx;
+    display: inline-block;
+    font-size: 24rpx;
+    padding: 22rpx;
+    background-color: #f5f8fa;
+    margin-left: 20rpx;
+}
+
+.commentRegion .writecomment button {
+    width: 100rpx;
+    display: inline-block;
+    height: 73rpx;
+    line-height: 73rpx;
+    margin-left: 20rpx;
+    font-size: 26rpx;
+}
+
+.commentlist .commentitem {
+    position: relative;
+    border-bottom: 1rpx solid #e9e9e9;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+}
+
+.commentlist .commentitem .commentImage {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    border: 1rpx solid #e9e9e9;
+    position: absolute;
+    top: 10rpx;
+    left: 0;
+}
+
+.commentlist .commentitem .textregion {
+    margin-left: 80rpx;
+}
+
+.commentlist .commentitem .username {
+    display: block;
+    color: #999;
+    font-size: 24rpx;
+}
+
+.commentlist .commentitem .content {
+    margin-top: 10rpx;
+    display: block;
+    color: #333;
+    font-size: 24rpx;
+    line-height: 40rpx;
+}
+
+.commentlist .commentitem .datetime {
+    margin-top: 10rpx;
+    display: block;
+    color: #999;
+    font-size: 20rpx;
+}

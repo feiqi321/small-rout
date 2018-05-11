@@ -26,6 +26,8 @@
     "pages/xptj/xptj",
     "pages/wq/wq",
     "pages/sjrz/sjrz",
+    "pages/fxindex/fxindex",
+     "pages/detail/detail",
     "pages/store_list/store_list"
   ],
   "window": {

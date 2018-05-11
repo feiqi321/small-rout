@@ -1,12 +1,12 @@
 <view class="title">
-  <input type='text' placeholder='添加标题'></input>
+  <input type='text' placeholder='添加标题'  value='{{title}}' bindinput="listenertitleInput"></input>
 </view>
 <view class='detail'>
-  <textarea></textarea>
+  <textarea  value='{{detail}}' bindinput="listenerdetailInput"></textarea>
 </view>
 <view class='addImg'>
   <image src='../../image/addimg.png' bindtap='addImg'></image>
 </view>
-<view class='btnwrapper'>
+<view class='btnwrapper' bindtap='submit'>
 <text>发布</text>
 </view>

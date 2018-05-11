@@ -1,0 +1,90 @@
+/**index.wxss**/
+
+.container {
+    background-color: #f5f8fa;
+}
+
+.infolist {
+    padding-top: 20rpx;
+    float: left;
+}
+
+.placeholder {
+    /* width: 100rpx;
+    height: 300rpx;
+    background-color: red;
+    display: inline-block; */
+}
+
+.infolist .infoItem {
+    width: 345rpx;
+    background-color: white;
+    margin-bottom: 20rpx;
+    margin-left: 20rpx;
+    float: left;
+    display: block;
+    border-radius: 10rpx;
+}
+
+.infolist .infoItem.upstyle {
+    position: relative;
+    top: 180rpx;
+}
+
+.infolist .infoItem .contentInfo {
+    width: 325rpx;
+    padding: 20rpx;
+    padding-top: 0;
+}
+
+.infolist .infoItem .contentInfo .contentInfoText {
+    font-size: 25rpx;
+    line-height: 35rpx;
+    display: inline-block;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.infoItem image {
+    width: 345rpx;
+    height: 400rpx;
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+}
+
+.infolist  .userInfo {
+    margin-top: 10rpx;
+    position: relative;
+}
+
+.infolist  .userInfo image {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+}
+
+.infolist  .userInfo text {
+    color: #333;
+    margin-left: 10rpx;
+    position: relative;
+    bottom: 20rpx;
+    font-size: 22rpx;
+}
+
+.infolist  .userInfo .dianzandiv {
+    position: absolute;
+    right: 20rpx;
+    font-size: 22rpx;
+    bottom: 22rpx;
+    color: #999;
+}
+
+.infolist  .userInfo .dianzandiv i {
+    font-size: 22rpx;
+    margin-right: 10rpx;
+    color: #999;
+}

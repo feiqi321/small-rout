@@ -9,18 +9,6 @@ Page({
     userId:null,
     loading:false,
     listData: [
-      {
-        orderNo: '72718931738',
-        list:[{
-          productName:'',
-          sellNum:'',
-          url:''
-        }],
-        realTotalAmt: '73.00',
-        sellNum : 1,
-        status: 0,
-        orderStatusText: '待支付'
-      }
     ]
   },
   changeTab(e){

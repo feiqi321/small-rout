@@ -42,8 +42,9 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    var userId = wx.getStorageSync("userName");
     wx.request({
-      url: 'https://www.isxcxbackend1.cn/bmh_shop/point/list?userId=18',
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/point/list?userId=' + userId,
       method: 'GET',
       success: function (res) {
         that.setData({

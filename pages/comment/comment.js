@@ -5,10 +5,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-    orderNo:null,
-    imgUrl:null,
+    userId:null,
+    orderNo: null,
+    imgUrl: null,
+    title: null,
+    detail: null
   },
-  addImg(){
+  listenertitleInput: function (e) {
+    this.data.title = e.detail.value;
+  },
+  listenerdetailInput: function (e) {
+    this.data.detail = e.detail.value;
+  },
+  submit() {
+    console.log(this.data.imgUrl)
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/discuss/update',
+      method: 'POST',
+      data: {
+        userId: this.data.userId,
+        title: this.data.title,
+        url: this.data.imgUrl,
+        context: this.data.detail
+      },
+      success: function (res) {
+        if (res.data.success){
+          wx.showToast({
+            title: '评论成功',
+            icon: 'none',
+            duration: 2000
+          });
+        }
+        
+      }
+    })
+
+    },
+  addImg() {
     var that = this;
 
     wx.chooseImage({
@@ -52,17 +85,18 @@ Page({
               //   "fileName": data.FileName,
               //   "url": data.Url
               // });
-              if(res.data.code==="1"){
+              var result = JSON.parse(res.data);
+              if (result.code === "1") {
                 that.setData({
-                  imgUrl: res.data.result.image_path
+                  imgUrl: result.result.image_path
                 });
-                wx.showModal({
-                  title: '成功提示',
-                  content: '上传图片成功',
-                  
-                })
+                wx.showToast({
+                  title: '上传图片成功',
+                  icon: 'none',
+                  duration: 2000
+                });
               }
-              
+
 
               // //如果是最后一张,则隐藏等待中  
               if (uploadImgCount == tempFilePaths.length) {
@@ -88,7 +122,7 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      orderNo:options.id,
+      orderNo: options.id,
       userId: wx.getStorageSync('userName')
     });
     console.log(this.data.orderNo)
@@ -98,48 +132,48 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })

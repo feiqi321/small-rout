@@ -5,7 +5,7 @@
       <icon type="{{allChecked!==true?'circle':'success'}}" size="23" color="{{allChecked!==true?'':'#ff4444'}}" bindtap="checkTap" />全选
       <!-- <radio value="{{allChecked}}" checked="{{allChecked}}" /> 全选 -->
     </view>
-    <view class='js'>
+    <view class='js'  bindtap="submitOrder" >
       结算
     </view>
     <view class='detail'>

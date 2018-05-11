@@ -6,7 +6,7 @@ Page({
    */
   data: {
     allChecked: false,
-    total:0,
+    total: 0,
     listData: []
 
   },
@@ -42,11 +42,11 @@ Page({
     });
     this.computTotal();
   },
-  computTotal(){
+  computTotal() {
     var list = this.data.listData;
-    var total=0;
-    list.forEach(function(item){
-      if (item.checked){
+    var total = 0;
+    list.forEach(function (item) {
+      if (item.checked) {
         console.info(item.price + "**" + item.productNum)
         total += item.price * item.productNum;
       }
@@ -55,13 +55,40 @@ Page({
       total: total
     });
   },
-  delete(e){
+  submitOrder(e) {
+    var that = this;
+    var data=that.data.listData;
+    data=data.filter(function(item){
+      return item.checked
+    });
+    if(data.length<1){
+      wx.showToast({
+        title: '选择的商品不能为空',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn//bmh_shop/app/product//buy',
+      method: 'POST',
+      data: {
+        "userId": 12,
+        "totalAmt": 100,
+        "buyProductDetailRequests": data
+      },
+      success: function (res) {
+        console.log(res);
+      }
+    })
+  },
+  delete(e) {
     var index = parseInt(e.currentTarget.dataset.item);
     var list = this.data.listData;
     var id = list[index].id;
-    list.splice(index,1);
+    list.splice(index, 1);
     this.setData({
-      listData:list
+      listData: list
     });
     this.computTotal();
     this.queryDelete(id);
@@ -69,19 +96,19 @@ Page({
   queryDelete(id) {
     var that = this;
     wx.request({
-      url: 'https://www.isxcxbackend1.cn/bmh_shop/shoppingCart/delete/'+id,
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/shoppingCart/delete/' + id,
       method: 'DELETE',
       success: function (res) {
         console.log(res);
       }
     })
   },
-  gotolist(){
+  gotolist() {
     wx.switchTab({
       url: '/pages/list/list'
     })
   },
-  query(cb){
+  query(cb) {
     var that = this;
     wx.request({
       url: 'https://www.isxcxbackend1.cn/bmh_shop/shoppingCart/list?userId=18',

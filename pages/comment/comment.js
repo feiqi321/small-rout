@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    orderNo:null
   },
   addImg(){
     var that = this;
@@ -27,7 +27,7 @@ Page({
         var uploadImgCount = 0;
         for (var i = 0, h = tempFilePaths.length; i < h; i++) {
           wx.uploadFile({
-            url: util.getClientSetting().domainName + '/home/uploadfilenew',
+            url: 'http://upload.qiniup.com/',
             filePath: tempFilePaths[i],
             name: 'uploadfile_ant',
             formData: {
@@ -76,7 +76,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      orderNo:options.id,
+      userId: wx.getStorageSync('userName')
+    });
+    console.log(this.data.orderNo)
   },
 
   /**

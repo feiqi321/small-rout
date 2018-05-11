@@ -33,13 +33,13 @@ Page({
   gotocom(e){
     const id = parseInt(e.currentTarget.dataset.id);
     wx.navigateTo({
-      url: '/pages/comment/comment'
+      url: '/pages/comment/comment?id=' + id
     })
   },
   gotoPay(e){
     const id = parseInt(e.currentTarget.dataset.id);
     wx.navigateTo({
-      url: '/pages/orderPay/orderpay'
+      url: '/pages/orderPay/orderpay?id=' + id
     })
   },
   pl() {

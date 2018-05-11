@@ -5,52 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
+    orderNo:null,
+    userID:null,
     address: {
       name: '朱文诚',
       detail: '湖北省武汉市高新五路长航社区',
       phone: '15927216320'
     },
     listData: [
-      {
-        title: '[BT租号]绝地求生steam账号',
-        des: '满飞满螃各种圣衣，光环！勿打生存，不然扣押金！',
-        total: '1990',
-        num: 1,
-        price: 25,
-        id: '001'
-      },
-      {
-        title: '[BT租号]绝地求生steam账号',
-        des: '满飞满螃各种圣衣，光环！勿打生存，不然扣押金！',
-        total: '1990',
-        num: 3,
-        price: 25,
-        id: '003'
-      },
-      {
-        title: '[BT租号]绝地求生steam账号',
-        des: '满飞满螃各种圣衣，光环！勿打生存，不然扣押金！',
-        total: '1990',
-        num: 1,
-        id: '002',
-        price: 25
-      },
-      {
-        title: '[BT租号]绝地求生steam账号',
-        des: '满飞满螃各种圣衣，光环！勿打生存，不然扣押金！',
-        total: '1990',
-        num: 5,
-        id: '005',
-        price: 25
-      },
-      {
-        title: '[BT租号]绝地求生steam账号',
-        des: '满飞满螃各种圣衣，光环！勿打生存，不然扣押金！',
-        total: '1990',
-        num: 4,
-        id: '006',
-        price: 25
-      }
+      // {
+      //   title: '[BT租号]绝地求生steam账号',
+      //   des: '满飞满螃各种圣衣，光环！勿打生存，不然扣押金！',
+      //   total: '1990',
+      //   num: 1,
+      //   price: 25,
+      //   id: '001'
+      // }
     ]
   },
   changeAddress(){
@@ -61,8 +31,62 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  submit(){
+    var _this = this;
+    //https://www.isxcxbackend1.cn/bmh_shop/app/product/orderToBuy?orderIds=7
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/app/product//payment',
+      method:'POST',
+      data:{
+        "userId": this.data.userID,
+        "totalAmt": "500",
+        "orderIds": this.data.orderNo
+      },
+      success: function (res) {
+        if (res.data.success) {
+          _this.setData({
+            listData: res.data.rows
+          })
+        }
+      }
+    })
+  },
+  queryShopList(){
+    var _this=this;
+    //https://www.isxcxbackend1.cn/bmh_shop/app/product/orderToBuy?orderIds=7
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/app/product/orderToBuy?orderIds=' + this.data.orderNo,
+      success: function (res) {
+        if (res.data.success) {
+          _this.setData({
+            listData:res.data.rows
+          })
+        }
+      }
+    })
+  },
+  queryDefaultAddress(){
+    var _this = this;
+    //https://www.isxcxbackend1.cn/bmh_shop/app/product/orderToBuy?orderIds=7
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/default/' + this.data.userID,
+      success: function (res) {
+        if (res.data.success) {
+          console.log(res)
+          // _this.setData({
+          //   listData: res.data.rows
+          // })
+        }
+      }
+    })
+  },
   onLoad: function (options) {
-  
+    this.setData({
+      orderNo:options.id,
+      userID: wx.getStorageSync('userName')
+    });
+    this.queryShopList();
+    this.queryDefaultAddress();
   },
 
   /**

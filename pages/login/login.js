@@ -55,6 +55,11 @@ Page({
 
     })
   },
+  back(){
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
   getcode() {
     var reg = new RegExp(/^1[0-9]{10}$/);
     if (!reg.test(this.data.phone)) {

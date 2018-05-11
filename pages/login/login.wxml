@@ -1,6 +1,4 @@
-<view class='nav'>
- 登录
-</view>
+<view class='back' bindtap='back'>《 返回</view>
 <view class='login'>
   <input type='number' placeholder='手机号' maxlength='11' bindinput="listenerPhoneInput"></input>
   <input type='number'  maxlength='6' placeholder='验证码' class='yzm' bindinput="listenerPasswordInput"></input> <text class='getcode' bindtap='getcode'>获取验证码</text>

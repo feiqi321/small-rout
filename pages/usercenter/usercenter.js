@@ -77,7 +77,7 @@ Page({
         icon: 'none',
         duration: 2000,
         complete: function () {
-          wx.navigateTo({
+          wx.redirectTo({
             url: '/pages/login/login'
           })
         }

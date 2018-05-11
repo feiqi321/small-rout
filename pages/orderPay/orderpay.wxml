@@ -11,15 +11,15 @@
 
 <view class='table-de-tr' wx:for="{{listData}}" wx:for-item="item" wx:key="item.id" wx:for-index="index">
   <view class='img'>
-    <image src='http://xu-game.xubei.com/game/QJ7nmczbe4.png'></image>
+    <image src='{{item.url}}'></image>
   </view>
   <view class='detail'>
-    <view class='title'>{{item.title}}</view>
-    <view class='des'>{{item.des}}</view>
+    <view class='title'>{{item.productName}}</view>
+    <!-- <view class='des'>{{item.des}}</view> -->
     <view class='n-p'>
-      <text class='money'>${{item.total}}</text>
-      <text>X{{item.num}}</text>
+      <text class='money'>${{item.price}}</text>
+      <text>X{{item.productNum}}</text>
     </view>
   </view>
 </view>
-<view class='bot-tool'>合计： <text class='money'>￥288.00</text><text class='sub'>提交订单</text></view>
+<view class='bot-tool'>合计： <text class='money'>￥288.00</text><text class='sub' bindtap='submit'>提交订单</text></view>

@@ -73,12 +73,18 @@ Page({
       url: 'https://www.isxcxbackend1.cn//bmh_shop/app/product//buy',
       method: 'POST',
       data: {
-        "userId": 12,
-        "totalAmt": 100,
+        "userId": wx.getStorageSync('userName'),
+        "totalAmt": this.data.total,
         "buyProductDetailRequests": data
       },
       success: function (res) {
-        console.log(res);
+        if (res.data.success){
+          console.log(res.data.data)
+          var id=res.data.data;
+          wx.navigateTo({
+            url: '/pages/orderPay/orderpay?id=' + id,
+          })
+        }
       }
     })
   },

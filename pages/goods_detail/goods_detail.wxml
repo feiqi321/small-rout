@@ -36,11 +36,11 @@
 </view>
 
 <view class='bot-tool'>
-  <navigator url="/pages/goodscard/goodscard">
+  <navigator url="/pages/goodscard/goodscard" open-type="switchTab">
     <image src="{{gwcbj}}" class="gwc" />
   </navigator>
   <text class='add-gwc' bindtap='showCard'>加入购物车</text>
-  <text class='buy'>立即购买</text>
+  <text class='buy' bindtap='submitOrder'>立即购买</text>
 </view>
 
 <view class='addCard' hidden='{{!showCard}}'>
@@ -49,7 +49,7 @@
     <view class='detail'>
       <image src='{{imgSrc}}'></image>
       <text>{{goodDetail.product_name}}</text>
-      <text class='red'>￥198</text>
+      <text class='red'>￥{{goodDetail.price*num}}</text>
     </view>
     <view class='buynum'>
       <text>购买数量：</text>

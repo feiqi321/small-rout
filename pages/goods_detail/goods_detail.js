@@ -68,6 +68,44 @@ Page({
       num: this.data.num - 1 > 1 ? this.data.num-1:1
     });
   },
+  submitOrder(){
+    if (!wx.getStorageSync('userName')) {
+      wx.showToast({
+        title: '请先登录！',
+        icon: 'none',
+        duration: 2000,
+        complete: function () {
+          wx.navigateTo({
+            url: '/pages/login/login'
+          })
+        }
+      });
+      return;
+    }else{
+      var data = this.data.goodDetail;
+      data.productNum=1;
+      data.productId=data.id;
+      wx.request({
+        url: 'https://www.isxcxbackend1.cn//bmh_shop/app/product//buy',
+        method: 'POST',
+        data: {
+          "userId": wx.getStorageSync('userName'),
+          "totalAmt": data.price,
+          "buyProductDetailRequests": [data]
+        },
+        success: function (res) {
+          if (res.data.success) {
+            console.log(res.data.data)
+            var id = res.data.data;
+            wx.navigateTo({
+              url: '/pages/orderPay/orderpay?id=' + id,
+            })
+          }
+        }
+      })
+    }
+    
+  },
   submit(){
     const _this=this;
     if (!wx.getStorageSync('userName')) {
@@ -112,6 +150,7 @@ Page({
     wx.request({
       url: 'https://www.isxcxbackend1.cn/bmh_shop/product/info/' + this.data.goodsId, //仅为示例，并非真实的接口地址
       success: function (res) {
+        console.log(res)
         _this.setData({
           goodDetail: res.data.data
         })

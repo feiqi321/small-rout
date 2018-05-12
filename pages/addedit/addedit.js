@@ -25,7 +25,9 @@ Page({
   onLoad: function (options) {
     var that = this;
     var id = options.id;
-    that.data.currentId = options.id;
+    that.setData({
+      currentId:id
+    }) 
     var url;
     if(!id){
       url='https://www.isxcxbackend1.cn/bmh_shop/address/info/0'
@@ -39,9 +41,9 @@ Page({
         console.log(res)
        
         that.setData({
-          //linkman = res.data.data.linkman,
-          //tel = res.data.data.tel,
-          //detail = res.data.data.detail
+          linkman:res.data.data.linkman,
+          tel: res.data.data.tel,
+          detail: res.data.data.detail
         })
         
      

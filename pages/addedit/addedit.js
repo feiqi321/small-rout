@@ -5,21 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentId:"",
-    address:{
-      linkman:"",
-      tel:"",
-      detail:""
-    }
+    currentId:'',
+    linkman: '',
+    tel: '',
+    detail: '',
   },
   listenerlinkmanInput: function (e) {
-    this.data.address.linkman = e.detail.value;
+    this.data.linkman = e.detail.value;
   },
   listenerTelInput: function (e) {
-    this.data.address.tel = e.detail.value;
+    this.data.tel = e.detail.value;
   },
   listenerAddressInput: function (e) {
-    this.data.address.detail = e.detail.value;
+    this.data.detail = e.detail.value;
   },
   /**
    * 生命周期函数--监听页面加载
@@ -39,9 +37,15 @@ Page({
       method: 'GET',
       success: function (res) {
         console.log(res)
+       
         that.setData({
-          address: res.data.data,
+          //linkman = res.data.data.linkman,
+          //tel = res.data.data.tel,
+          //detail = res.data.data.detail
         })
+        
+     
+        
       }
 
     })
@@ -97,7 +101,7 @@ Page({
   },
   submit() {
     var userId = wx.getStorageSync("userName");
-    if (this.data.address.linkman == "" || this.data.address.tel == "" || this.data.address.detail == "") {
+    if (this.data.linkman == "" || this.data.tel == "" || this.data.detail == "") {
       wx.showToast({
         title: '请完善你的联系人信息',
         icon: 'none',
@@ -106,12 +110,12 @@ Page({
       return;
     }
     wx.request({
-      url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/',
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/update',
       data: {
         userid:userId,
-        linkman: this.data.address.linkman,
-        tel: this.data.address.tel,
-        detail: this.data.address.detail
+        linkman: this.data.linkman,
+        tel: this.data.tel,
+        detail: this.data.detail
       },
       method: 'POST',
       success: function (res) {

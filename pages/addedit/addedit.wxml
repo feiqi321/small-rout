@@ -4,7 +4,7 @@
     <label>
       <text class='label'>联系人</text>
       <view class='input-area'>
-        <input type='text' value='{{address.linkman}}' bindinput="listenerlinkmanInput"></input>
+        <input type='text' value='{{linkman}}' bindinput="listenerlinkmanInput"></input>
       </view>
     </label>
   </view>
@@ -12,7 +12,7 @@
     <label>
       <text class='label'>电话</text>
       <view class='input-area'>
-        <input type='number' value='{{address.tel}}' bindinput="listenerTelInput"></input>
+        <input type='number' value='{{tel}}' bindinput="listenerTelInput"></input>
       </view>
     </label>
   </view>
@@ -20,7 +20,7 @@
     <label>
       <text class='label'>详细地址</text>
       <view class='input-area'>
-        <textarea bindinput="listenerAddressInput" value='{{address.detail}}'></textarea>
+        <textarea bindinput="listenerAddressInput" value='{{detail}}'></textarea>
       </view>
     </label>
   </view>

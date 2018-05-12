@@ -2,7 +2,7 @@
 <view class="containerUser">
   <view  bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>{{userInfo.amt}}代币</text>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
   <view class="info_list">
     <block wx:for="{{userListInfo}}">

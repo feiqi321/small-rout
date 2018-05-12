@@ -2,6 +2,7 @@
 
 .container {
     background-color: #f5f8fa;
+    padding-top: 0;
 }
 
 .swiper {

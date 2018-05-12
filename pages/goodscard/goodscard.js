@@ -117,7 +117,7 @@ Page({
   query(cb) {
     var that = this;
     wx.request({
-      url: 'https://www.isxcxbackend1.cn/bmh_shop/shoppingCart/list?userId=18',
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/shoppingCart/list?userId=' + wx.getStorageSync('userName'),
       method: 'GET',
       success: function (res) {
         console.log(res);

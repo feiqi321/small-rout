@@ -35,6 +35,11 @@ Page({
             icon: 'none',
             duration: 2000
           });
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '/pages/orderlist/orderlist'
+            })
+          }, 800)
         }
         
       }

@@ -101,6 +101,7 @@ Page({
     })
   },
   onLoad: function (options) {
+    console.info(options.id);
     this.setData({
       orderNo:options.id,
       userID: wx.getStorageSync('userName')

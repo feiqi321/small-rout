@@ -57,6 +57,22 @@ Page({
     writeCommitTap: function (e){
         var self=this;
         var userId = wx.getStorageSync("userName");
+        if (userId == null || userId==""){
+          wx.showToast({
+            title: '还未登陆！请先登陆',
+            icon: 'none',
+            duration: 2000
+          });
+          return;
+        }
+        if (this.data.commitContent == null || this.data.commitContent == "" || this.data.commitContent.length<=10) {
+          wx.showToast({
+            title: '发布内容必须超过10个字',
+            icon: 'none',
+            duration: 2000
+          });
+          return;
+        }
         console.info(userId)
         wx.request({
             url: config.writeCommit,

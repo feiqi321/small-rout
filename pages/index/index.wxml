@@ -25,7 +25,7 @@
   <view class='wrapper'>
     <view class='fx-item' wx:for="{{listData}}" bindtap='gotoShare' data-id="{{item.id}}">
       <image src='{{item.url}}' mode="widthFix"></image>
-      <text>{{item.title}}</text>
+      <text class='title'>{{item.title}}</text>
       <view class='f-tb'><text class='fl'>{{item.userId}}</text><image src='../../image/xin.png'></image><text>{{item.thumbs}}</text></view>
     </view>
   </view>

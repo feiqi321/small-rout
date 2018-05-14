@@ -105,6 +105,7 @@
   padding: 15rpx 2.5%;
   line-height: 1.8em;
   font-size: 28rpx;
+  overflow: hidden;
 }
 .home-fx .fx-item image{
   width: 100%;
@@ -114,8 +115,15 @@
   height: 2em;
   line-height: 2em;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+}
+.home-fx .fx-item .title{
+  height: 3.6em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  padding: 0 4rpx;
+  line-height: 1.8em;
 }
 .home-fx .fx-item .f-tb{
   font-size: 24rpx;

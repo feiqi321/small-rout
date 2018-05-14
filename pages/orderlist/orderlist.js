@@ -33,7 +33,7 @@ Page({
   pl() {
     
   },
-  querylist(){
+  querylist(cb){
     var _this=this;
     var status = _this.data.navIndex-1;
     if(status<0){
@@ -51,8 +51,10 @@ Page({
         if (res.data.success){
           _this.setData({
             listData:res.data.rows
-          })
+          });
+
         }
+        cb&&cb()
       }
     })
   },
@@ -112,7 +114,10 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    var that = this;
+    that.querylist(function () {
+      wx.stopPullDownRefresh();
+    });
   },
 
   /**

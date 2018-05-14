@@ -24,6 +24,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    
     var id = options.id;
     that.setData({
       currentId:id

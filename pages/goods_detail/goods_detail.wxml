@@ -17,7 +17,7 @@
     </view>
     <view class='tab-content'>
       <view wx:if="{{showDetail}}">
-        {{goodDetail.detail}}
+			  <rich-text nodes="{{goodDetail.detail}}" ></rich-text>  
       </view>
       <view wx:else class='cjjl'>
         <view class='th'>

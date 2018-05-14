@@ -7,9 +7,13 @@ Page({
   data: {
     phone: 'q',
     code: '',
+    referee:'',
   },
   listenerPhoneInput: function (e) {
     this.data.phone = e.detail.value;
+  },
+  listenerPhoneInput: function (e) {
+    this.referee.phone = e.detail.value;
   },
 
   /**
@@ -32,7 +36,8 @@ Page({
       url: 'https://www.isxcxbackend1.cn/bmh_shop/app/account/login',
       data: {
         username: this.data.phone,
-        sms: this.data.code
+        sms: this.data.code,
+        referee: this.data.referee
       },
       method: 'GET',
       success: function (res) {

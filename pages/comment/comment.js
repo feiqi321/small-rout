@@ -66,10 +66,11 @@ Page({
         var uploadImgCount = 0;
         for (var i = 0, h = tempFilePaths.length; i < h; i++) {
           wx.uploadFile({
-            url: 'http://good-api.xubei.com/goods-api/arbitration/upTemp',
-            //url:'https://www.isxcxbackend1.cn/product/info/upload',
+            //url: 'http://good-api.xubei.com/goods-api/arbitration/upTemp',
+            url:'https://www.isxcxbackend1.cn/bmh_shop/product/info/upload',
             filePath: tempFilePaths[i],
-            name: 'uploadfile_ant',
+            //name: 'uploadfile_ant',
+            name:'file',
             formData: {
               'imgIndex': i
             },
@@ -90,10 +91,13 @@ Page({
               //   "fileName": data.FileName,
               //   "url": data.Url
               // });
+              //var result = JSON.parse(res.data);
+              //if (result.code === "1") {
               var result = JSON.parse(res.data);
-              if (result.code === "1") {
+              if (result.success){
                 that.setData({
-                  imgUrl: result.result.image_path
+                  //imgUrl: result.result.image_path
+                  imgUrl: "https://www.isxcxbackend1.cn/bmh_shop/"+result.data
                 });
                 wx.showToast({
                   title: '上传图片成功',

@@ -1,3 +1,4 @@
+<import src="../wxParse/wxParse.wxml"/>
 <view class='top-img'>
   <image src='{{goodDetail.img_url}}'></image>
 </view>
@@ -17,7 +18,9 @@
     </view>
     <view class='tab-content'>
       <view wx:if="{{showDetail}}">
-			  <rich-text nodes="{{goodDetail.detail}}" ></rich-text>  
+      <!-- 这一块是富文本 显示的内容区 -->
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+			  <!--  <rich-text nodes="{{goodDetail.detail}}" ></rich-text>  -->
       </view>
       <view wx:else class='cjjl'>
         <view class='th'>

@@ -13,8 +13,8 @@ Page({
   listenerPhoneInput: function (e) {
     this.data.phone = e.detail.value;
   },
-  listenerPhoneInput: function (e) {
-    this.referee.phone = e.detail.value;
+  listenerRefereeInput: function (e) {
+    this.data.referee = e.detail.value;
   },
 
   /**
@@ -50,6 +50,52 @@ Page({
             duration: 2000
           });
         }else{
+          wx.setStorageSync('userName', res.data.data.id);
+          wx.setStorageSync('amt', res.data.data.balance);
+          wx.setStorageSync('tel', res.data.data.username);
+          wx.switchTab({
+            url: '/pages/usercenter/usercenter'
+          })
+        }
+      }
+
+    })
+  },
+  register() {
+    var reg = new RegExp(/^1[0-9]{10}$/);
+    if (!reg.test(this.data.phone) || this.data.code == "") {
+      wx.showToast({
+        title: '请完善你的用户信息',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    if (this.data.referee == "") {
+      wx.showToast({
+        title: '邀请人不能为空',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/app/account/register',
+      data: {
+        username: this.data.phone,
+        sms: this.data.code,
+        referee: this.data.referee
+      },
+      method: 'GET',
+      success: function (res) {
+        console.log(res)
+        if (!res.data.success) {
+          wx.showToast({
+            title: res.data.errorMsg || '网络异常！',
+            icon: 'none',
+            duration: 2000
+          });
+        } else {
           wx.setStorageSync('userName', res.data.data.id);
           wx.setStorageSync('amt', res.data.data.balance);
           wx.setStorageSync('tel', res.data.data.username);

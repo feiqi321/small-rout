@@ -97,7 +97,7 @@ Page({
               if (result.success){
                 that.setData({
                   //imgUrl: result.result.image_path
-                  imgUrl: "https://www.isxcxbackend1.cn/bmh_shop/"+result.data
+                  imgUrl: result.data
                 });
                 wx.showToast({
                   title: '上传图片成功',

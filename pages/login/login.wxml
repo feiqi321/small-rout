@@ -6,8 +6,8 @@
  <navigator data-num="2" hover-class="navigator-hover" open-type="switchTab" bindtap="menuClick"   class="{{_num==1?'cunavigator-hoverr':''}}">注册</navigator>
 </view>-->
 <view class="swiper-tab">  
-    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">哈哈</view>  
-    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">呵呵</view>  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">登陆</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">注册</view>  
 </view>
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
     <swiper-item>  

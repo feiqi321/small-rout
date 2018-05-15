@@ -1,10 +1,12 @@
 // pages/goods_detail/goods_detail.js
+var WxParse = require('../wxParse/wxParse.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    article: '<div style="text-align:center;">《静夜思》· 李白<br />床前明月光，<br /></div>',
     goodsId:null,//商品id
     imgSrc:'http://xu-game.xubei.com/game/GTQaFr2DEw.jpg',
     goodDetail:{},
@@ -29,6 +31,7 @@ Page({
     _this.setData({
       goodsId:options.id
     });
+    
     _this.query();
   },
   gotoCard(){
@@ -151,8 +154,10 @@ Page({
       url: 'https://www.isxcxbackend1.cn/bmh_shop/product/info/' + this.data.goodsId, //仅为示例，并非真实的接口地址
       success: function (res) {
         console.log(res)
+        WxParse.wxParse('article', 'html', res.data.data.detail, _this, 5);
         _this.setData({
           goodDetail: res.data.data
+          
         })
         cb && cb();
       }

@@ -1,4 +1,5 @@
 /* pages/goods_detail/goods_detail.wxss */
+@import "/pages/wxParse/wxParse.wxss";
 .top-img{
   height: 350rpx;
 }

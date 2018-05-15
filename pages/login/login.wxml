@@ -1,8 +1,28 @@
 <view class='back' bindtap='back'>《 返回</view>
-<view class='login'>
-  <input type='number' placeholder='手机号' maxlength='11' bindinput="listenerPhoneInput"></input>
-  <input type='number'  maxlength='6' placeholder='验证码' class='yzm' bindinput="listenerPasswordInput"></input> <text class='getcode' bindtap='getcode'>获取验证码</text>
-  <input type='number' placeholder='推荐人' maxlength='11' bindinput="listenerRefereeInput"></input>
-  <view class='des' > 温馨提示：未注册的手机号，登录时将自动注册，且代表您已同意</view>
-  <button  bindtap="default" hover-class="other-button-hover" bindtap="submit" type='primary'> 登录 </button>
+<!--<view class='nav'>
+    <view data-num="1" hover-class="navigator-hover" class="{{_num==1?'cunavigator-hoverr':''}}" bindtap="menuClick">登录</view>
+    <view data-num="2" hover-class="navigator-hover" class="{{_num==2?'cunavigator-hoverr':''}}" bindtap="menuClick">注册</view>-->
+ <!--<navigator data-num="1" hover-class="navigator-hover" open-type="switchTab" bindtap="menuClick" class="{{_num==1?'cunavigator-hoverr':''}}">登录</navigator>
+ <navigator data-num="2" hover-class="navigator-hover" open-type="switchTab" bindtap="menuClick"   class="{{_num==1?'cunavigator-hoverr':''}}">注册</navigator>
+</view>-->
+<view class="swiper-tab">  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">哈哈</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">呵呵</view>  
 </view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
+    <swiper-item>  
+      <view class='login'>
+        <input type='number' placeholder='手机号' maxlength='11' bindinput="listenerPhoneInput"></input>
+        <input type='number'  maxlength='6' placeholder='验证码' class='yzm' bindinput="listenerPasswordInput"></input>      <text class='getcode' bindtap='getcode'>获取验证码</text>
+        <button  bindtap="default" hover-class="other-button-hover" bindtap="submit" type='primary'> 登录 </button>
+      </view>
+    </swiper-item>  
+    <swiper-item>  
+      <view class='login'>
+        <input type='number' placeholder='手机号' maxlength='11' bindinput="listenerPhoneInput"></input>
+        <input type='number'  maxlength='6' placeholder='验证码' class='yzm' bindinput="listenerPasswordInput"></input>      <text class='getcode' bindtap='getcode'>获取验证码</text>
+        <input type='number' placeholder='推荐人' maxlength='11' bindinput="listenerRefereeInput"></input>
+        <button  bindtap="default" hover-class="other-button-hover" bindtap="register" type='primary'> 注册 </button>
+      </view>
+    </swiper-item>  
+</swiper> 

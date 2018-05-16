@@ -20,4 +20,10 @@
   color: #f00;
   margin-left: 160rpx;
   margin-top: 20rpx;
+  font-size: 28rpx;
+}
+.listitem .price text{
+  text-decoration: line-through;
+  margin-right: 5px;
+  font-size: 24rpx;
 }

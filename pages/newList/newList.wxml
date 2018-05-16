@@ -1,0 +1,7 @@
+<view class='topnav'>
+  <text class='{{navIndex==0?"active":""}}' bindtap='changeTab' data-key='0'>商品中心</text>
+  <text class='{{navIndex==1?"active":""}}' bindtap='changeTab' data-key='1'>特价商品</text>
+</view>
+ <view class='listwrapper'>
+ <listitem wx:for="{{listData}}" listData="{{item}}" wx:for-item="item"></listitem>
+ </view>

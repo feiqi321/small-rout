@@ -27,8 +27,9 @@
     "pages/wq/wq",
     "pages/sjrz/sjrz",
     "pages/fxindex/fxindex",
-     "pages/detail/detail",
-    "pages/store_list/store_list"
+    "pages/detail/detail",
+    "pages/store_list/store_list",
+    "pages/newList/newList"
   ],
   "window": {
     "navigationBarBackgroundColor": "#333",
@@ -49,19 +50,18 @@
         "iconPath": "image/icon-03.png",
         "selectedIconPath": "image/icon-h-03.png"
       },
-     
       {
-        "pagePath": "pages/list/list",
+        "pagePath": "pages/newList/newList",
         "text": "商品会场",
         "iconPath": "image/icon-12.png",
         "selectedIconPath": "image/icon-h-12.png"
       },
-       {
-         "pagePath": "pages/goodscard/goodscard",
-         "text": "购物车",
-         "iconPath": "image/icon-04.png",
-         "selectedIconPath": "image/icon-h-04.png"
-       },
+      {
+        "pagePath": "pages/goodscard/goodscard",
+        "text": "购物车",
+        "iconPath": "image/icon-04.png",
+        "selectedIconPath": "image/icon-h-04.png"
+      },
       {
         "pagePath": "pages/usercenter/usercenter",
         "text": "我的",

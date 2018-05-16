@@ -40,6 +40,7 @@ Page({
       //   'content-type': 'application/json' // 默认值
       // },
       success: function (res) {
+        console.log(res.data.rows);
         if (!res.data.rows || res.data.rows.length < 10) {
           _this.setData({
             isEnd: true

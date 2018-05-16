@@ -1,0 +1,33 @@
+/* pages/orderlist/orderlist.wxss */
+
+.topnav {
+  border-top: 1px solid #e1e1e1;
+  line-height: 90rpx;
+  border-bottom: 1px solid #e1e1e1;
+  overflow: hidden;
+  display: flex;
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.topnav text {
+  flex: 1;
+  margin: 0 20rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 82rpx;
+  border-top: 4rpx solid #fff;
+  border-bottom: 4rpx solid #fff;
+  color: #666;
+}
+
+.topnav .active {
+  border-bottom-color: #f44;
+}
+
+.listwrapper {
+  margin-top: 100rpx;
+}

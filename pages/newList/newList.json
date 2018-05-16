@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "商品会场",
+  "usingComponents": {
+    "listitem": "/components/itemlist/itemlist"
+  }
+}

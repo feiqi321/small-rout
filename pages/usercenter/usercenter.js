@@ -70,6 +70,9 @@ Page({
       })
     })
   },
+  onPullDownRefresh() {
+    wx.stopPullDownRefresh();
+  },
   onShow(){
     if (!wx.getStorageSync('userName')) {
       wx.showToast({

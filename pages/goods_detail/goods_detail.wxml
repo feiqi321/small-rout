@@ -7,7 +7,6 @@
     <text class='title'>{{goodDetail.product_name}}</text>
     <text class='money'>￥{{goodDetail.price}}</text>
     <view class='des'>
-      <text class='yf'>运费：0.00</text>
       <text>销量：{{goodDetail.sellNum}}</text>
     </view>
   </view>

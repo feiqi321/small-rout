@@ -26,7 +26,7 @@
     <view class='fx-item' wx:for="{{listData}}" bindtap='gotoShare' data-id="{{item.id}}">
       <image src='{{item.url}}' mode="widthFix"></image>
       <text class='title'>{{item.title}}</text>
-      <view class='f-tb'><text class='fl'>{{item.userId}}</text><image src='../../image/xin.png'></image><text>{{item.thumbs}}</text></view>
+      <view class='f-tb'><text class='fl'>{{item.userId}}</text><image src='../../image/xin.png'></image><text>{{item.stores}}</text></view>
     </view>
   </view>
 </view>

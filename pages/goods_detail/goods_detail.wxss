@@ -88,6 +88,7 @@
 .bot-tool .gwc{
   flex: 1;
   background-size:80% 80%;
+  background: #F8F8FF;
   width: 90rpx;
   height: 90rpx;
 }

@@ -4,6 +4,9 @@ import config from "../../config.js"
 const app = getApp()
 
 var userId = wx.getStorageSync("userName");
+var pageNo = 1;
+var pageSize =6;
+var isMore = true;
 
 Page({
     data: {
@@ -60,8 +63,8 @@ Page({
             url: config.getProductListUrl,
             // url:"https://www.isxcxbackend1.cn/bmh_shop/discuss/all",
             data: {
-                page: 1,
-                rows:5,
+                page: pageNo,
+                rows: pageSize,
                 userId: userId
             },
             method: "GET",
@@ -72,9 +75,16 @@ Page({
             success: function (res) {
                 console.log(res);
                 if (res.data.success){
+                    if (res.data.rows.length < pageSize) {
+                        isMore = false
+                    }
+                    var totallist = self.data.infoList.concat(res.data.rows);
                     self.setData({
-                        infoList: res.data.rows
-                    });
+                        infoList: totallist
+                    })
+                    // self.setData({
+                    //     infoList: res.data.rows
+                    // });
                 }
             },
             complete: function () {
@@ -89,5 +99,13 @@ Page({
             userInfo: e.detail.userInfo,
             hasUserInfo: true
         })
+    },
+    // 滚到底部触发
+    scrolltolower: function (e) {
+        // debugger;
+        if (isMore) {
+            pageNo++
+            this.onLoad()
+        }
     }
 })

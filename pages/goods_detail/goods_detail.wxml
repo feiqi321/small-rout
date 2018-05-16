@@ -28,9 +28,9 @@
           <text>数量</text>
         </view>
         <view class='item' wx:for="{{buyer}}" wx:for-index="idx" wx:for-item="item">
-          <text>{{item.buyName}}</text>
-          <text>{{item.time}}</text>
-          <text>{{item.num}}</text>
+          <text>{{item.userName}}</text>
+          <text>{{item.creattime}}</text>
+          <text>{{item.sellNum}}</text>
         </view>
       </view>
     </view>

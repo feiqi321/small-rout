@@ -16,9 +16,9 @@ Page({
     num:1,
     buyer:[
       {
-        buyName:'张三',
-        time:'2017-09-25',
-        num:1
+        userName:'张三',
+        creattime:'2017-09-25',
+        sellNum:1
       }
     ]
   },
@@ -41,9 +41,22 @@ Page({
     })
   },
   setShowDetailTrue(){
-    this.setData({
-      showDetail:true
+    var _this = this;
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn//bmh_shop/order/detail/sellCount/' + _this.data.goodsId,
+      method: 'GET',
+      success: function (res) {
+        if (res.data.success) {
+          _this.setData({
+            buyer : res.data.rows,
+            showDetail: true
+          })
+        }
+      }
     })
+    /*this.setData({
+      showDetail:true
+    })*/
   },
   setShowDetailFalse() {
     this.setData({

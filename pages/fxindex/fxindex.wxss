@@ -3,6 +3,11 @@
 .container {
     background-color: #f5f8fa;
     padding-top: 0;
+    padding-bottom: 0;
+}
+
+.contractScrollView{
+      height: 1210rpx;  
 }
 
 .infolist {

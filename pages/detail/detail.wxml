@@ -1,48 +1,50 @@
 <!--detail.wxml-->
 <view class="container">
-    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <!-- <scroll-view scroll-y class='contractScrollView' bindscrolltolower='scrolltolower'> -->
+        <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
         <block wx:key="{{item}}" wx:for="{{movies}}" wx:for-index="index">
             <swiper-item>
                 <image src="{{item}}" class="slide-image" mode="aspectFill" />
             </swiper-item>
         </block>
-    </swiper>
-    <view class="detailUserInfo">
-        <view class='userinfo'>
-            <image class="userImage" src='../../image/user.png'></image>
-            <text>{{productDetail.userId}}</text>
-            <i catchtap='storeTap' wx:if="{{!productDetail.store}}" class="iconfont icon-dianzan"></i>
-            <i catchtap='storeTap' wx:if="{{productDetail.store}}"  class="iconfont icon-daohangshoucangyishoucang"></i>
+        </swiper>
+        <view class="detailUserInfo">
+            <view class='userinfo'>
+                <image class="userImage" src='../../image/user.png'></image>
+                <text>{{productDetail.userId}}</text>
+                <i catchtap='storeTap' wx:if="{{!productDetail.store}}" class="iconfont icon-dianzan"></i>
+                <i catchtap='storeTap' wx:if="{{productDetail.store}}"  class="iconfont icon-daohangshoucangyishoucang"></i>
+            </view>
+            <view class='detailtext'>{{productDetail.context}}</view>
+            <view class='timeinfo'>
+                <div class="datetime">{{productDetail.creattime}}</div>
+                <div class="count">
+                    <text>{{productDetail.stores}}次收藏</text>
+                    <text class='zancount'>{{productDetail.thumbs}}次赞</text>
+                </div>
+            </view>
         </view>
-        <view class='detailtext'>{{productDetail.context}}</view>
-        <view class='timeinfo'>
-            <div class="datetime">{{productDetail.creattime}}</div>
-            <div class="count">
-                <text>{{productDetail.stores}}次收藏</text>
-                <text class='zancount'>{{productDetail.thumbs}}次赞</text>
-            </div>
-        </view>
-    </view>
-    <view class='commentRegion'>
-        <view class="commentTitle">
-            笔记评论
-            <!-- <text></text> -->
-            <text class="commentNum">共{{productDetail.comments}}条评论</text>
-        </view>
-        <view class='writecomment'>
-            <image class="userImage" src='../../image/write_comment.png'></image>
-            <textarea bindblur="bindTextAreaBlur" value="{{commitContent}}"  auto-height placeholder="点赞都是讨论，评论才是真诚" />
-            <button catchtap='writeCommitTap'>评</button>
-        </view>
-        <view class='commentlist'>
-            <view class="commentitem" wx:for-items="{{commentlist}}" wx:key="{{item.username}}" data-item="{{item}}">
-                <image class="commentImage" src='../../image/user.png'></image>
-                <view class='textregion'>
-                    <text class='username'>{{item.userId}}</text>
-                    <text class='content'>{{item.context}}</text>
-                    <text class='datetime'>{{item.creattime}}</text>
+        <view class='commentRegion'>
+            <view class="commentTitle">
+                笔记评论
+                <!-- <text></text> -->
+                <text class="commentNum">共{{productDetail.comments}}条评论</text>
+            </view>
+            <view class='writecomment'>
+                <image class="userImage" src='../../image/write_comment.png'></image>
+                <textarea bindblur="bindTextAreaBlur" value="{{commitContent}}"  auto-height placeholder="点赞都是讨论，评论才是真诚" />
+                <button catchtap='writeCommitTap'>评</button>
+            </view>
+            <view class='commentlist'>
+                <view class="commentitem" wx:for-items="{{commentlist}}" wx:key="{{item.username}}" data-item="{{item}}">
+                    <image class="commentImage" src='../../image/user.png'></image>
+                    <view class='textregion'>
+                        <text class='username'>{{item.userId}}</text>
+                        <text class='content'>{{item.context}}</text>
+                        <text class='datetime'>{{item.creattime}}</text>
+                    </view>
                 </view>
             </view>
         </view>
-    </view>
+    <!-- </scroll-view> -->
 </view>

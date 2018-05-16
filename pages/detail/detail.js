@@ -108,6 +108,7 @@ Page({
         self.refresh()
     },
     refresh:function(){
+        wx.showLoading();
         var self = this;
         // var detailUrl = config.getProductDetail + self.data.id;
         var userId = wx.getStorageSync("userName");
@@ -133,6 +134,7 @@ Page({
                 }
             },
             complete: function () {
+                wx.stopPullDownRefresh();
                 wx.hideLoading();
             }
         })
@@ -160,5 +162,11 @@ Page({
     bindTextAreaBlur: function (e) {
         console.log("blur",e.detail.value)
         this.data.commitContent = e.detail.value;
-    }
+    },
+    // 下拉刷新回调接口
+    onPullDownRefresh: function () {
+       
+        // do somthing
+        this.refresh();
+    },
 })

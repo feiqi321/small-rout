@@ -8,7 +8,7 @@ Page({
     navIndex: 0,
     pageIndex: 1,
     url:{
-      0:'https://www.isxcxbackend1.cn//bmh_shop/product/info/table',
+      0:'https://www.isxcxbackend1.cn//bmh_shop/product/info/listUnReduce',
       1:'https://www.isxcxbackend1.cn/bmh_shop/app/product/listReduce'
     },
     isEnd: false,

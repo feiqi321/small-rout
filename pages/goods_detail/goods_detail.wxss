@@ -53,7 +53,7 @@
   color: #f00;
 }
 .tab-content{
-  padding: 40rpx 20rpx;
+  padding: 40rpx 20rpx 100rpx 20rpx;
   overflow: hidden;
   font-size: 24rpx;
   line-height: 2em;

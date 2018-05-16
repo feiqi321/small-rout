@@ -31,7 +31,7 @@ Page({
   queryList(cb) {
     var _this = this;
     wx.request({
-      url: 'https://www.isxcxbackend1.cn//bmh_shop/product/info/table', //仅为示例，并非真实的接口地址
+      url: 'https://www.isxcxbackend1.cn//bmh_shop/product/info/listUnReduce', //仅为示例，并非真实的接口地址
       data: {
         page: _this.data.pageIndex,
         rows: 10

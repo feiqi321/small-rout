@@ -4,6 +4,8 @@
     "pages/logs/logs",
     "pages/goods/goods_details",
     "pages/cart/cart",
+    "pages/newList/newList",
+    "pages/goodscard/goodscard",
     "pages/list/list",
     "pages/model/model",
     "pages/money/money",
@@ -13,7 +15,6 @@
     "pages/login/login",
     "pages/usercenter/usercenter",
     "pages/goods_detail/goods_detail",
-    "pages/goodscard/goodscard",
     "pages/address/address",
     "pages/addedit/addedit",
     "pages/orderlist/orderlist",
@@ -28,8 +29,8 @@
     "pages/sjrz/sjrz",
     "pages/fxindex/fxindex",
     "pages/detail/detail",
-    "pages/store_list/store_list",
-    "pages/newList/newList"
+    "pages/store_list/store_list"
+    
   ],
   "window": {
     "navigationBarBackgroundColor": "#333",

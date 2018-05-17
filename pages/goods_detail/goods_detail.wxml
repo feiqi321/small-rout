@@ -1,6 +1,6 @@
 <import src="../wxParse/wxParse.wxml"/>
 <view class='top-img'>
-  <image src='{{goodDetail.img_url}}'></image>
+  <image src='{{goodDetail.img_url}}' mode="widthFix"></image>
 </view>
 <view class='m-detail'>
   <view class='hd'>

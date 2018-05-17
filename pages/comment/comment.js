@@ -7,7 +7,7 @@ Page({
   data: {
     userId:null,
     orderNo: null,
-    imgUrl: null,
+    imgUrl: '../../image/addimg.png',
     title: null,
     detail: null
   },

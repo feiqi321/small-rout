@@ -5,7 +5,7 @@
   <textarea  value='{{detail}}' bindinput="listenerdetailInput"></textarea>
 </view>
 <view class='addImg'>
-  <image src='../../image/addimg.png' bindtap='addImg'></image>
+  <image src='{{imgUrl}}' bindtap='addImg'></image>
 </view>
 <view class='btnwrapper' bindtap='submit'>
 <text>发布</text>

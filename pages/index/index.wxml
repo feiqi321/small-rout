@@ -6,7 +6,7 @@
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}" indicator-active-color="#e61773" indicator-color="#ffffff" class='slider'>
   <block wx:for="{{lunbo_src}}">
     <swiper-item>
-      <image src="{{item}}" class='slide-image'/>
+      <image src="{{imgUrl}}" class='slide-image'/>
     </swiper-item>
   </block>
 </swiper>

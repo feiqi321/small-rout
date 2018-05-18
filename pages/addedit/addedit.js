@@ -45,6 +45,7 @@ Page({
           tel: res.data.data.tel,
           detail: res.data.data.detail
         })    
+
       }
 
     })

@@ -6,8 +6,8 @@ Page({
     //motto: 'Hello World',
     //userInfo: {},
     lunbo_src: [
-      'http://p6wd1cjvv.bkt.clouddn.com/banner1.jpg',
-      'http://p6wd1cjvv.bkt.clouddn.com/banner2.jpg'
+      //'http://p6wd1cjvv.bkt.clouddn.com/banner1.jpg',
+      //'http://p6wd1cjvv.bkt.clouddn.com/banner2.jpg'
     ],
     indicatorDots: true,
     autoplay: true,
@@ -97,6 +97,9 @@ Page({
     var index = e.currentTarget.dataset.index;
     if (this.data.cate_src[index].path) {
      if (this.data.cate_src[index].urlType) {
+       if (index==3){
+         app.globalData.selectCondition = 1;
+       }
        wx.switchTab({
          url: this.data.cate_src[index].path
        })
@@ -139,6 +142,21 @@ Page({
 
     })
   },
+  queryFrontImg(cb) {
+    var that = this;
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/frontImg/all',
+      method: 'GET',
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          lunbo_src: res.data.rows
+        });
+        cb && cb();
+      }
+
+    })
+  },
   onPullDownRefresh() {
     var that = this;
     that.queryFx(function () {
@@ -148,6 +166,7 @@ Page({
   onLoad: function () {
     var that = this;
     that.queryFx();
+    that.queryFrontImg();
   },
 
 })

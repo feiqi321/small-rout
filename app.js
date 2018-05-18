@@ -25,6 +25,7 @@ App({
     }
   },
   globalData:{
+    selectCondition: '',
     userInfo:null
   }
 })

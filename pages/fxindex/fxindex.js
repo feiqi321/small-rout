@@ -59,6 +59,7 @@ Page({
     // 初始化加载 
     onLoad: function () {
         var self =this ;
+        wx.showLoading();
         wx.request({
             url: config.getProductListUrl,
             // url:"https://www.isxcxbackend1.cn/bmh_shop/discuss/all",

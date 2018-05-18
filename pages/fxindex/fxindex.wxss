@@ -7,7 +7,8 @@
 }
 
 .contractScrollView{
-      height: 1210rpx;  
+     height: 1200rpx;   
+    /* height: 1110rpx;   */
 }
 
 .infolist {

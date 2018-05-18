@@ -1,3 +1,4 @@
 {
-    "navigationBarTitleText": "分享列表"
+    "navigationBarTitleText": "分享列表",
+    "enablePullDownRefresh": true
 }

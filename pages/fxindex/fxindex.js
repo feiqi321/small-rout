@@ -58,7 +58,23 @@ Page({
     },
     // 初始化加载 
     onLoad: function () {
-        var self =this ;
+    },
+    onShow:function(){
+        pageNo = 1;
+        isMore=true;
+        this.refresh();
+    },
+    // 下拉刷新回调接口
+    onPullDownRefresh: function () {
+        console.log("refresh");
+        // do somthing
+        pageNo = 1;
+        isMore = true;
+        this.refresh();
+    },
+    refresh:function(){
+        // debugger;
+        var self = this;
         wx.showLoading();
         wx.request({
             url: config.getProductListUrl,
@@ -75,7 +91,7 @@ Page({
             },
             success: function (res) {
                 console.log(res);
-                if (res.data.success){
+                if (res.data.success) {
                     if (res.data.rows.length < pageSize) {
                         isMore = false
                     }
@@ -106,7 +122,18 @@ Page({
         // debugger;
         if (isMore) {
             pageNo++
-            this.onLoad()
+            this.refresh()
         }
+    },
+    onPullDownRefresh() {
+        var that = this;
+        // that.queryFx(function () {
+            wx.stopPullDownRefresh();
+        // });
+    },
+    toUpperLoadNews(){
+        pageNo = 1;
+        isMore = true;
+        this.refresh();
     }
 })

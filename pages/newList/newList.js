@@ -1,4 +1,5 @@
 // pages/orderlist/orderlist.js
+var app = getApp();
 Page({
 
   /**
@@ -16,6 +17,7 @@ Page({
   },
   changeTab(e) {
     const index = parseInt(e.currentTarget.dataset.key);
+    console.info(index);
     this.setData({
       navIndex: index,
       isEnd:false,
@@ -57,7 +59,9 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    if(options.type){
+    var type = app.globalData.selectCondition;
+    if(type){
+      app.globalData.selectCondition = null;
       this.setData({
         navIndex: 1
       });

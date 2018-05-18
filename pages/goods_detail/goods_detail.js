@@ -177,7 +177,7 @@ Page({
   query(cb){
     const _this=this;
     wx.request({
-      url: 'https://www.isxcxbackend1.cn/bmh_shop/product/info/' + this.data.goodsId, //仅为示例，并非真实的接口地址
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/product/info/detail/' + this.data.goodsId, //仅为示例，并非真实的接口地址
       success: function (res) {
         console.log(res)
         WxParse.wxParse('article', 'html', res.data.data.detail, _this, 5);

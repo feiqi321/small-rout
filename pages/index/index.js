@@ -97,6 +97,9 @@ Page({
     var index = e.currentTarget.dataset.index;
     if (this.data.cate_src[index].path) {
      if (this.data.cate_src[index].urlType) {
+       if (index==3){
+         app.globalData.selectCondition = 1;
+       }
        wx.switchTab({
          url: this.data.cate_src[index].path
        })

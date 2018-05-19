@@ -17,7 +17,7 @@
       <image src="{{shopitem.url}}"></image>
       <view>
         <text>{{shopitem.productName}}</text>
-         <text class='fr'>￥40.00</text> 
+         <text class='fr'>￥{{shopitem.totalAmt}}</text> 
       </view>
       <view class='fr'>X{{shopitem.sellNum}}</view>
     </view>

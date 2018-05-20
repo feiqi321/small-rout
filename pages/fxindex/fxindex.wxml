@@ -13,7 +13,8 @@
                         <image class="userImage" src='../../image/user.png' class='img'></image>
                         <text>{{item.userId}}</text>
                         <span class='dianzandiv' bindtap="thumbsUpTap" data-item="{{item}}">
-                            <i class="iconfont icon-unie60b"></i>
+                             <i wx:if="{{item.assess}}" class="iconfont icon-unie60b"></i> 
+                            <i wx:if="{{!item.assess}}" class="iconfont icon-dianzan1"></i>
                             <span>{{item.thumbs}}</span>
                         </span>
                     </view>

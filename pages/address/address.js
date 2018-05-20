@@ -9,6 +9,14 @@ Page({
       
     ]
   },
+  chooseAddress(e){
+    if (this.data.orderId){
+      var id = e.currentTarget.dataset.id;
+      wx.navigateTo({
+        url: '/pages/orderPay/orderpay?id=' + this.data.orderId + '&addressId=' + id,
+      })
+    }
+  },
   addEdit(e){
     var id = e.currentTarget.dataset.id;
     if(id){
@@ -22,24 +30,32 @@ Page({
     }
     
   },
+  query(cb){
+    var that=this;
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/myAddressList?userId=' + that.data.userId,
+      method: 'GET',
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          listData: res.data.rows
+        });
+        cb&&cb()
+      }
+
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
       var that = this;
-      var userId = wx.getStorageSync("userName")
-      console.info(userId);
-      wx.request({
-        url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/myAddressList?userId=' + userId,
-        method: 'GET',
-        success: function (res) {
-          console.log(res)
-          that.setData({
-            listData: res.data.rows
-          })
-        }
-
-      })
+      that.setData({
+        userId: wx.getStorageSync("userName"),
+        orderId: options.orderId||null
+      });
+      that.query();
+      
   },
 
   /**
@@ -74,7 +90,10 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    var that = this;
+    that.query(function () {
+      wx.stopPullDownRefresh();
+    });
   },
 
   /**

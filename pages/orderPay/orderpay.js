@@ -7,6 +7,7 @@ Page({
   data: {
     orderNo:null,
     userID:null,
+    addressId:null,
     total:null,
     address: {
       linkman: '',
@@ -26,7 +27,7 @@ Page({
   },
   changeAddress(){
     wx.navigateTo({
-      url: '/pages/address/address',
+      url: '/pages/address/address?orderId=' + this.data.orderNo,
     })
   },
   /**
@@ -104,7 +105,8 @@ Page({
     console.info(options.id);
     this.setData({
       orderNo:options.id,
-      userID: wx.getStorageSync('userName')
+      userID: wx.getStorageSync('userName'),
+      addressId: options.addressId
     });
     this.queryShopList();
     this.queryDefaultAddress();

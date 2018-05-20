@@ -40,6 +40,7 @@ Page({
       method: 'GET',
       success: function (res) {
         console.log(res)
+<<<<<<< Updated upstream
 
         that.setData({
           linkman:res.data.data.linkman,
@@ -47,6 +48,19 @@ Page({
           detail: res.data.data.detail
         })    
 
+=======
+        that.data.linkman = res.data.data.linkman,
+          that.data.tel = res.data.data.tel,
+          that.data.detail = res.data.data.detail
+        //that.setData({
+        //  linkman = res.data.data.linkman,
+        //  tel = res.data.data.tel,
+        //  detail = res.data.data.detail
+        //})
+        
+     
+        
+>>>>>>> Stashed changes
       }
 
     })

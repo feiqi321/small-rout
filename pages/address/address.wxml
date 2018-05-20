@@ -1,7 +1,7 @@
 <!--pages/address/address.wxml-->
 <view class='add' bindtap='addEdit'><text>新增地址</text></view>
 <view class='add-wp' wx:if="{{listData.length>0}}">
-  <view class='add-item' wx:for="{{listData}}">
+  <view class='add-item' wx:for="{{listData}}" bindtap='chooseAddress' data-id="{{item.id}}">
     <image src='../../image/edit.png' bindtap='addEdit' data-id="{{item.id}}"></image>
     <text class='phone'>{{item.linkman}} {{item.tel}}</text>
     <text class="title">{{item.detail}}</text>

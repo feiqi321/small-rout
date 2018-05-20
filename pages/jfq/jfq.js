@@ -61,16 +61,24 @@ Page({
       },
       success: function (res) {
         console.log(res);
-        wx.showToast({
-          title: '转让处理成功！',
-          icon: 'none',
-          duration: 2000
-        });
-        setTimeout(function () {
-          wx.navigateTo({
-            url: '/pages/jfq/jfq'
-          })
-        }, 800)
+        if (res.data.success){
+          wx.showToast({
+            title: '转让处理成功！',
+            icon: 'none',
+            duration: 2000
+          });
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '/pages/jfq/jfq'
+            })
+          }, 800)
+        }else{
+          wx.showToast({
+            title: res.data.errorMsg,
+            icon: 'none',
+            duration: 2000
+          });
+        }
       }
 
     })

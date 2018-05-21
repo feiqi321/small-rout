@@ -7,7 +7,7 @@ Page({
   data: {
     orderNo:null,
     userID:null,
-    addressId:null,
+    addressId:0,
     total:null,
     address: {
       linkman: '',
@@ -89,9 +89,15 @@ Page({
   },
   queryDefaultAddress(){
     var _this = this;
+    var addressId;
     //https://www.isxcxbackend1.cn/bmh_shop/app/product/orderToBuy?orderIds=7
+    if (!this.data.addressId){
+      addressId=0
+    }else{
+      addressId = this.data.addressId
+    }
     wx.request({
-      url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/default/' + this.data.userID,
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/address/info/default/' + this.data.userID  +'/' + addressId,
       success: function (res) {
         if (res.data.success) {
           _this.setData({

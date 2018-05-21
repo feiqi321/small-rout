@@ -2,6 +2,7 @@
 var app = getApp();
 Page({
   data: {
+    avatarUrl:'http://img.isxcxbackend1.cn/head.jpg',
     userInfo: {
       //avatarUrl:"",
       //nickName:"",
@@ -59,14 +60,16 @@ Page({
    // var userInfo = {};
    // userInfo.nickName = wx.getStorageSync('tel');
    // userInfo.amt = wx.getStorageSync('amt');
-   // userInfo.avatarUrl = "http://p6wd1cjvv.bkt.clouddn.com/head.jpg";
+    //userInfo.avatarUrl = "http://p6wd1cjvv.bkt.clouddn.com/head.jpg";
    // that.setData({
    //   userInfo: userInfo
    // })
+    //that.data.avatarUrl = "http://p6wd1cjvv.bkt.clouddn.com/head.jpg"
     app.getUserInfo(function (userInfo) {
       //更新数据
       that.setData({
         userInfo: userInfo
+       
       })
     })
   },

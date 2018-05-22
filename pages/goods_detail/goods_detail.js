@@ -129,6 +129,13 @@ Page({
             wx.navigateTo({
               url: '/pages/orderPay/orderpay?id=' + id,
             })
+          } else {
+            wx.showToast({
+              title: res.data.errorMsg,
+              icon: 'fail',
+              duration: 2000,
+    
+            })
           }
         }
       })
@@ -168,6 +175,13 @@ Page({
               icon: 'success',
               duration: 2000
             });
+          } else {
+            wx.showToast({
+              title: res.data.errorMsg,
+              icon: 'fail',
+              duration: 2000,
+            
+            })
           }
         }
       })

@@ -42,7 +42,8 @@ Page({
       data:{
         "userId": this.data.userID,
         "totalAmt": this.data.total,
-        "orderIds": this.data.orderNo
+        "orderIds": this.data.orderNo,
+        "addressId": this.data.addressId
       },
       success: function (res) {
         console.log(res)

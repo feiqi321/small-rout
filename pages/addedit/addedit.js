@@ -6,6 +6,7 @@ Page({
    */
   data: {
     currentId:'',
+    orderId:'',
     linkman: '',
     tel: '',
     detail: '',
@@ -104,6 +105,7 @@ Page({
   
   },
   submit() {
+    var _this=this;
     var userId = wx.getStorageSync("userName");
     if (this.data.linkman == "" || this.data.tel == "" || this.data.detail == "") {
       wx.showToast({
@@ -138,8 +140,12 @@ Page({
             duration: 2000
           });
           setTimeout(function () {
+            var idUrl='';
+            if (_this.data.orderId){
+              idUrl = '?orderId=' + _this.data.orderId;
+            }
             wx.navigateTo({
-              url: '/pages/address/address'
+              url: '/pages/address/address'+idUrl
             })
           }, 800)
           
@@ -150,7 +156,7 @@ Page({
   },
   delete() {
     var id = this.data.currentId;
-    console.info(id);
+    var _this=this;
     wx.request({
       url: 'https://www.isxcxbackend1.cn/bmh_shop//address/info/'+id,
       method: 'DELETE',
@@ -163,9 +169,12 @@ Page({
             duration: 2000
           });
         } else {
-          
+          var idUrl = '';
+          if (_this.data.orderId) {
+            idUrl = '?orderId=' + _this.data.orderId;
+          }
           wx.navigateTo({
-            url: '/pages/address/address'
+            url: '/pages/address/address' + idUrl
           })
         }
       }

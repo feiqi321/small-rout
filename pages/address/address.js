@@ -19,15 +19,18 @@ Page({
   },
   addEdit(e){
     var id = e.currentTarget.dataset.id;
-    if(id){
-      wx.navigateTo({
-        url: '/pages/addedit/addedit?id=' + id,
-      })
-    }else{
-      wx.navigateTo({
-        url: '/pages/addedit/addedit',
-      })
+    var orderId = thia.data.orderId;
+    var orderUrl='';
+    if (id&&orderId){
+      orderUrl = '?orderId=' + orderId+'&id='+id;
+    }else if(id&&!orderId){
+      orderUrl = '?id=' + id;
+    } else if (!id && orderId){
+      orderUrl = '?orderId=' + orderId;
     }
+    wx.navigateTo({
+      url: '/pages/addedit/addedit' + orderUrl,
+    })
     
   },
   query(cb){

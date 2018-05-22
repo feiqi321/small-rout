@@ -27,8 +27,10 @@ Page({
     var that = this;
     
     var id = options.id;
+    var orderId = options.orderId;
     that.setData({
-      currentId:id
+      currentId:id,
+      orderId: orderId
     }) 
     var url;
     if(!id){

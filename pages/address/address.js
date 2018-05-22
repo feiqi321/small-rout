@@ -19,7 +19,7 @@ Page({
   },
   addEdit(e){
     var id = e.currentTarget.dataset.id;
-    var orderId = thia.data.orderId;
+    var orderId = this.data.orderId;
     var orderUrl='';
     if (id&&orderId){
       orderUrl = '?orderId=' + orderId+'&id='+id;

@@ -42,7 +42,7 @@
     <image src="{{gwcbj}}" class="gwc" />
   </navigator>
   <text class='add-gwc' bindtap='showCard'>加入购物车</text>
-  <text class='buy' bindtap='submitOrder'>立即购买</text>
+  <text class='buy' bindtap='showBuyCard'>立即购买</text>
 </view>
 
 <view class='addCard' hidden='{{!showCard}}'>

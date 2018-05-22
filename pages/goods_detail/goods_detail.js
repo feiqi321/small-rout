@@ -13,6 +13,7 @@ Page({
     'gwcbj':'/image/gwc.png',
     showDetail:true,
     showCard:false,
+    showType:0,
     num:1,
     buyer:[
       {
@@ -77,9 +78,9 @@ Page({
     })*/
   },
   showCard(){
-    console.log(121)
     this.setData({
-      showCard:true
+      showCard:true,
+      showType:1
     })
   },
   hideCard(){
@@ -97,6 +98,12 @@ Page({
       num: this.data.num - 1 > 1 ? this.data.num-1:1
     });
   },
+  showBuyCard() {
+    this.setData({
+      showCard: true,
+      showType: 2
+    })
+  },
   submitOrder(){
     if (!wx.getStorageSync('userName')) {
       wx.showToast({
@@ -112,7 +119,7 @@ Page({
       return;
     }else{
       var data = this.data.goodDetail;
-      data.productNum=1;
+      data.productNum = this.data.num;
       data.productId=data.id;
       wx.request({
         url: 'https://www.isxcxbackend1.cn//bmh_shop/app/product//buy',
@@ -157,34 +164,39 @@ Page({
       });
       return;
     }else{
-      var id = wx.getStorageSync('userName');
-      wx.request({
-        url: 'https://www.isxcxbackend1.cn/bmh_shop/shoppingCart/update',
-        data: {
-          userId: id,
-          productId: this.data.goodsId,
-          productNum: this.data.num
-        },
-        method:'POST',
-        success: function (res) {
-          console.log(res);
-          if (res.data.success){
-            _this.hideCard();
-            wx.showToast({
-              title: '加入购物车成功！',
-              icon: 'success',
-              duration: 2000
-            });
-          } else {
-            wx.showToast({
-              title: res.data.errorMsg,
-              icon: 'fail',
-              duration: 2000,
-            
-            })
+      if (this.data.showType==1){
+        var id = wx.getStorageSync('userName');
+        wx.request({
+          url: 'https://www.isxcxbackend1.cn/bmh_shop/shoppingCart/update',
+          data: {
+            userId: id,
+            productId: this.data.goodsId,
+            productNum: this.data.num
+          },
+          method: 'POST',
+          success: function (res) {
+            console.log(res);
+            if (res.data.success) {
+              _this.hideCard();
+              wx.showToast({
+                title: '加入购物车成功！',
+                icon: 'success',
+                duration: 2000
+              });
+            } else {
+              wx.showToast({
+                title: res.data.errorMsg,
+                icon: 'fail',
+                duration: 2000,
+
+              })
+            }
           }
-        }
-      })
+        })
+      }else if (this.data.showType ==2){
+        _this.submitOrder();
+      }
+
     }
     
   },

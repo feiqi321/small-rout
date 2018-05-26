@@ -8,22 +8,43 @@ Page({
   data: {
     navIndex: 0,
     pageIndex: 1,
-    url:{
-      0:'https://www.isxcxbackend1.cn//bmh_shop/product/info/listUnReduce',
-      1:'https://www.isxcxbackend1.cn/bmh_shop/app/product/listReduce'
+    showFilter: false,
+    url: {
+      0: 'https://www.isxcxbackend1.cn//bmh_shop/product/info/listUnReduce',
+      1: 'https://www.isxcxbackend1.cn/bmh_shop/app/product/listReduce'
     },
     isEnd: false,
-    listData: []
+    listData: [],
+    filterId:null,
+    filterData: []
+  },
+  changeFilter() {
+    this.setData({
+      showFilter: true
+    });
+  },
+  changeFilterHide() {
+    this.setData({
+      showFilter: false
+    });
   },
   changeTab(e) {
     const index = parseInt(e.currentTarget.dataset.key);
     console.info(index);
     this.setData({
       navIndex: index,
-      isEnd:false,
-      pageIndex:1
+      isEnd: false,
+      pageIndex: 1
     });
-    this.queryList()
+    this.queryList();
+    this.queryFilterList();
+  },
+  setCurrentFilter(e){
+    var id = e.target.dataset.id;
+    this.setData({
+      filterId:id,
+      showFilter:false
+    });
   },
   queryList(cb) {
     var _this = this;
@@ -54,19 +75,37 @@ Page({
       }
     })
   },
+
+  queryFilterList(cb) {
+    var _this = this;
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop//product/type/showList/'+_this.data.navIndex,
+      success: function (res) {
+        if (res.data.success ) {
+          _this.setData({
+            filterData: res.data.rows,
+            filterId:null
+          });
+          cb && cb();
+        } 
+        
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
     var type = app.globalData.selectCondition;
-    if(type){
+    if (type) {
       app.globalData.selectCondition = null;
       this.setData({
         navIndex: 1
       });
     }
     that.queryList();
+    that.queryFilterList();
   },
 
   /**
@@ -106,6 +145,9 @@ Page({
       pageIndex: 1
     });
     that.queryList(function () {
+      wx.stopPullDownRefresh();
+    });
+    that.queryFilterList(function () {
       wx.stopPullDownRefresh();
     });
   },

@@ -2,6 +2,26 @@
   <text class='{{navIndex==0?"active":""}}' bindtap='changeTab' data-key='0'>商品中心</text>
   <text class='{{navIndex==1?"active":""}}' bindtap='changeTab' data-key='1'>特价商品</text>
 </view>
- <view class='listwrapper'>
- <listitem wx:for="{{listData}}" listData="{{item}}" wx:for-item="item"></listitem>
- </view>
+<view class='listwrapper'>
+  <listitem wx:for="{{listData}}" listData="{{item}}" wx:for-item="item"></listitem>
+</view>
+<view class='sx-btn' bindtap='changeFilter'>筛选</view>
+<view class='filter-wrapper' wx:if="{{showFilter}}">
+  <view class='mask' bindtap='changeFilterHide'></view>
+  <view class='filter'>
+    <view class='hd'>筛选</view>
+    <view class='bd'>
+      <view>
+        <view class='sc-wrapper'>
+          <block wx:for="{{filterData}}">
+            <text class="f-type">{{item.name}}</text>
+            <view class='thr-wrapper'>
+              <text wx:for="{{item.array}}" wx:for-item="scitem" data-id="{{scitem.id}}" bindtap='setCurrentFilter'>{{scitem.name}}</text>
+            </view>
+          </block>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

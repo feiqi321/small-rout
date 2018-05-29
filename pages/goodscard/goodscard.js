@@ -110,7 +110,7 @@ Page({
     })
   },
   gotolist() {
-    wx.switchTab({
+    wx.navigateTo({
       url: '/pages/newList/newList'
     })
   },

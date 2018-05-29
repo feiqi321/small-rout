@@ -1,0 +1,14 @@
+
+ <view class='filter'>
+  <view class='left-side'>
+    <text wx:for="{{filterData}}" class="{{index==currentIndex?'active':''}}" data-index="{{index}}" bindtap='changeIndex'>{{item.name}}</text>
+  </view>
+  <view class='right-wrapper'>
+      <block wx:for="{{currentList}}">
+        <text class="f-type">{{item.name}}</text>
+        <view class='thr-wrapper'>
+          <text wx:for="{{item.array}}" wx:for-item="scitem" data-id="{{scitem.id}}" bindtap='setCurrentFilter'>{{scitem.name}}</text>
+        </view>
+      </block>
+  </view>
+</view> 

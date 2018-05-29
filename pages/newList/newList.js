@@ -8,7 +8,7 @@ Page({
   data: {
     navIndex: 0,
     pageIndex: 1,
-    showFilter: false,
+    
     url: {
       0: 'https://www.isxcxbackend1.cn//bmh_shop/product/info/listUnReduce',
       1: 'https://www.isxcxbackend1.cn/bmh_shop/app/product/listReduce'
@@ -16,18 +16,9 @@ Page({
     isEnd: false,
     listData: [],
     filterId:null,
-    filterData: []
+    
   },
-  changeFilter() {
-    this.setData({
-      showFilter: true
-    });
-  },
-  changeFilterHide() {
-    this.setData({
-      showFilter: false
-    });
-  },
+  
   changeTab(e) {
     const index = parseInt(e.currentTarget.dataset.key);
     console.info(index);
@@ -37,15 +28,9 @@ Page({
       pageIndex: 1
     });
     this.queryList();
-    this.queryFilterList();
+   
   },
-  setCurrentFilter(e){
-    var id = e.target.dataset.id;
-    this.setData({
-      filterId:id,
-      showFilter:false
-    });
-  },
+  
   queryList(cb) {
     var _this = this;
     wx.request({
@@ -76,27 +61,16 @@ Page({
     })
   },
 
-  queryFilterList(cb) {
-    var _this = this;
-    wx.request({
-      url: 'https://www.isxcxbackend1.cn/bmh_shop//product/type/showList/'+_this.data.navIndex,
-      success: function (res) {
-        if (res.data.success ) {
-          _this.setData({
-            filterData: res.data.rows,
-            filterId:null
-          });
-          cb && cb();
-        } 
-        
-      }
-    })
-  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
+    this.setData({
+      filterId: options.id
+    });
+    console.log(this.data.filterId)
     var type = app.globalData.selectCondition;
     if (type) {
       app.globalData.selectCondition = null;
@@ -105,7 +79,7 @@ Page({
       });
     }
     that.queryList();
-    that.queryFilterList();
+    
   },
 
   /**
@@ -115,30 +89,7 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
+  
   onPullDownRefresh() {
     var that = this;
     that.setData({
@@ -147,9 +98,7 @@ Page({
     that.queryList(function () {
       wx.stopPullDownRefresh();
     });
-    that.queryFilterList(function () {
-      wx.stopPullDownRefresh();
-    });
+    
   },
 
   /**

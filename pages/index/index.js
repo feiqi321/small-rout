@@ -25,7 +25,6 @@ Page({
         text: '产品中心',
         picture: '../../image/15@2x.png',
         path: '/pages/newList/newList',
-        urlType: 'tab'
       },
       {
 
@@ -37,8 +36,7 @@ Page({
 
         text: '特价专区',
         picture: '../../image/11@2x.png',
-        path: '/pages/newList/newList?type=1',
-        urlType: 'tab'
+        path: '/pages/newList/newList?type=1'
       },
       {
 

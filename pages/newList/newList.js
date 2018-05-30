@@ -28,7 +28,19 @@ Page({
       pageIndex: 1
     });
     this.queryList();
+<<<<<<< Updated upstream
    
+=======
+    this.queryFilterList();
+  },
+  setCurrentFilter(e){
+    var id = e.target.dataset.id;
+    this.setData({
+      filterId:id,
+      showFilter:false
+    });
+    this.queryList();
+>>>>>>> Stashed changes
   },
   
   queryList(cb) {
@@ -36,6 +48,7 @@ Page({
     wx.request({
       url: _this.data.url[_this.data.navIndex], //仅为示例，并非真实的接口地址
       data: {
+        type: _this.data.filterId,
         page: _this.data.pageIndex,
         rows: 10
       },

@@ -102,7 +102,8 @@ Page({
       success: function (res) {
         if (res.data.success) {
           _this.setData({
-            address: res.data.data
+            address: res.data.data,
+            addressId: res.data.data.id
           })
         }
       }

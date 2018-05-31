@@ -5,7 +5,7 @@
   </view>
   <view class='right-wrapper'>
       <block wx:for="{{currentList}}">
-        <text class="f-type">{{item.name}}</text>
+        <text class="f-type" data-id="{{item.id}}" bindtap='setCurrentFilter'>{{item.name}}</text>
         <view class='thr-wrapper'>
           <text wx:for="{{item.array}}" wx:for-item="scitem" data-id="{{scitem.id}}" bindtap='setCurrentFilter'>{{scitem.name}}</text>
         </view>

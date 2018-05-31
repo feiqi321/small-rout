@@ -37,7 +37,7 @@ Page({
   setCurrentFilter(e){
     var id = e.target.dataset.id;
     wx.navigateTo({
-      url: '/pages/newList/newList?id=' + id,
+      url: '/pages/plist/plist?id=' + id,
     })
   },
   onLoad: function (options) {

@@ -24,7 +24,8 @@ Page({
 
         text: '产品中心',
         picture: '../../image/15@2x.png',
-        path: '/pages/newList/newList',
+        path: '/pages/filter/filter',
+        urlType: 'tab'
       },
       {
 
@@ -36,7 +37,7 @@ Page({
 
         text: '特价专区',
         picture: '../../image/11@2x.png',
-        path: '/pages/newList/newList?type=1'
+        path: '/pages/reduceList/reduceList'
       },
       {
 
@@ -102,6 +103,9 @@ Page({
          url: this.data.cate_src[index].path
        })
      } else {
+       if (index == 3) {
+         app.globalData.selectCondition = 1;
+       }
        wx.navigateTo({
          url: this.data.cate_src[index].path
        })

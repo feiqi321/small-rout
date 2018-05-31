@@ -25,6 +25,8 @@
     "pages/shopjs/shopjs",
     "pages/tjsp/tjsp",
     "pages/xptj/xptj",
+    "pages/reduceList/reduceList",
+    "pages/plist/plist",
     "pages/wq/wq",
     "pages/sjrz/sjrz",
     "pages/fxindex/fxindex",

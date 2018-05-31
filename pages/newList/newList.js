@@ -28,9 +28,6 @@ Page({
       pageIndex: 1
     });
     this.queryList();
-<<<<<<< Updated upstream
-   
-=======
     this.queryFilterList();
   },
   setCurrentFilter(e){
@@ -40,7 +37,6 @@ Page({
       showFilter:false
     });
     this.queryList();
->>>>>>> Stashed changes
   },
   
   queryList(cb) {

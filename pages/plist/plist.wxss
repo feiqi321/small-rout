@@ -1,3 +1,8 @@
+.position{
+  line-height: 30px;
+  padding-left: 10px;
+  
+}
 .list-wrapper{
   height: 100%;
 }

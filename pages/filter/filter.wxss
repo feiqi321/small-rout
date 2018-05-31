@@ -28,6 +28,7 @@
 }
 .left-side .active{
   background: #fff;
+  font-weight: bold;
 }
 .right-wrapper{
   box-sizing: border-box;

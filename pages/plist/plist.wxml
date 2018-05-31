@@ -1,3 +1,6 @@
+ <view class='position'>
+  清洁用品>>宝马会
+</view>
  <view>
  <listitem wx:for="{{listData}}" listData="{{item}}" wx:for-item="item"></listitem>
  </view>

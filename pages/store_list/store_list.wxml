@@ -1,7 +1,7 @@
-<view class='nav'>
+<!--<view class='nav'>
  <navigator url="/pages/store_list/store_list" hover-class="navigator-hover" open-type="switchTab" class='navigator-hover'>福利认领区</navigator>
  <navigator url="/pages/jfq/jfq" hover-class="navigator-hover">积分交换区</navigator>
-</view>
+</view>-->
 <view class="yhj">
 <view class='hd'>优惠卷</view>
 <view class='card-item'  wx:for="{{cardlist}}"  wx:for-item="card" wx:key="card.id">

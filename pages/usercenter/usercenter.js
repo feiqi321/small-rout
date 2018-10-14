@@ -2,6 +2,7 @@
 var app = getApp();
 Page({
   data: {
+    nickName:'',
     avatarUrl:'http://img.isxcxbackend1.cn/head.jpg',
     userInfo: {
       //avatarUrl:"",
@@ -14,21 +15,15 @@ Page({
       text: '我的订单',
       path: '/pages/orderlist/orderlist'
     }, 
-    //{
-    //  icon: '../../image/iconfont-card.png',
-    //  text: '我的福利',
-    //  path: '/pages/store_list/store_list'
-    //},
-    // {
-    ////  icon: '../../image/iconfont-icontuan.png',
-     // text: '购物车',
-    //  path: '/pages/goodscard/goodscard'
-    //},
      {
       icon: '../../image/iconfont-shouhuodizhi.png',
       text: '收货地址管理',
       path: '/pages/address/address'
-    }, {
+      }, {
+        icon: '../../image/iconfont-kefu.png',
+        text: '充值记录',
+        path: '/pages/czjl/czjl'
+      }, {
       icon: '../../image/iconfont-kefu.png',
       text: '商家入驻',
       path: '/pages/sjrz/sjrz'
@@ -88,6 +83,10 @@ Page({
           })
         }
       });
+    }else{
+      this.setData({
+        nickName: wx.getStorageSync('tel')
+      })
     }
   },
   

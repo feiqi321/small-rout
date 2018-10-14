@@ -134,7 +134,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.query();
+    if (!wx.getStorageSync('userName')) {
+      wx.showToast({
+        title: '请先登录！',
+        icon: 'none',
+        duration: 2000,
+        complete: function () {
+          wx.redirectTo({
+            url: '/pages/login/login'
+          })
+        }
+      });
+    } else {
+      this.query();
+    }
   },
   onPullDownRefresh() {
     var that = this;

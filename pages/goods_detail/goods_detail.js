@@ -14,6 +14,8 @@ Page({
     showDetail:true,
     showCard:false,
     showType:0,
+    modelType:'',
+    shopProductId:'',
     num:1,
     buyer:[
       {
@@ -30,8 +32,18 @@ Page({
   onLoad: function (options) {
     var _this=this;
     _this.setData({
-      goodsId:options.id
+      goodsId:options.id,
+      modelType:options.modelType
     });
+    if (options.modelType==2){
+      _this.setData({
+        shopProductId: options.id
+      })
+    }else{
+      _this.setData({
+        shopProductId: 0
+      })
+    }
     
     _this.query();
   },
@@ -171,6 +183,8 @@ Page({
           data: {
             userId: id,
             productId: this.data.goodsId,
+            modelType:this.data.modelType,
+            shopProductId: this.data.shopProductId,
             productNum: this.data.num
           },
           method: 'POST',
@@ -203,14 +217,15 @@ Page({
   query(cb){
     const _this=this;
     wx.request({
-      url: 'https://www.isxcxbackend1.cn/bmh_shop/product/info/detail/' + this.data.goodsId, //仅为示例，并非真实的接口地址
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/product/info/detail/' + this.data.goodsId + '/' + this.data.modelType, //仅为示例，并非真实的接口地址
       success: function (res) {
-        console.log(res)
         WxParse.wxParse('article', 'html', res.data.data.detail, _this, 5);
         _this.setData({
-          goodDetail: res.data.data
+          goodDetail: res.data.data,
+          goodsId:res.data.data.id
           
         })
+        
         cb && cb();
       }
     })

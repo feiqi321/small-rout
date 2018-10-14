@@ -5,13 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    hiddenmodalput: true,  
-    phone:null,
-    jfnumber:null,
-    objdata:{
-     // totalPoint:1099,
-     // inPoint:300,
-     // outPoint:200
+    hiddenmodalput: true,
+    phone: null,
+    jfnumber: null,
+    amt:null,
+    objdata: {
+      
+      // totalPoint:1099,
+      // inPoint:300,
+      // outPoint:200
     },
     listdata: [
       //{
@@ -19,7 +21,7 @@ Page({
       //  time: '2017-12-23 12:25:23',
       //  jf: '+200',
       //  id: 1
-     // }
+      // }
     ]
   },
   listenerphoneInput: function (e) {
@@ -43,7 +45,7 @@ Page({
   confirm: function () {
     var that = this;
     var userId = wx.getStorageSync("userName");
-    if (!userId || !this.data.phone || !this.data.jfnumber){
+    if (!userId || !this.data.phone || !this.data.jfnumber) {
       wx.showToast({
         title: '请完善信息',
         icon: 'none',
@@ -54,14 +56,14 @@ Page({
     wx.request({
       url: 'https://www.isxcxbackend1.cn/bmh_shop/point/update',
       method: 'POST',
-      data:{
+      data: {
         sendUserId: userId,
         acceptUsername: this.data.phone,
         amount: this.data.jfnumber
       },
       success: function (res) {
         console.log(res);
-        if (res.data.success){
+        if (res.data.success) {
           wx.showToast({
             title: '转让处理成功！',
             icon: 'none',
@@ -72,7 +74,7 @@ Page({
               url: '/pages/jfq/jfq'
             })
           }, 800)
-        }else{
+        } else {
           wx.showToast({
             title: res.data.errorMsg,
             icon: 'none',
@@ -85,37 +87,26 @@ Page({
     // this.setData({
     //   hiddenmodalput: true
     // })
-  } ,
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
-    if (!wx.getStorageSync('userName')) {
-      wx.showToast({
-        title: '请先登录！',
-        icon: 'none',
-        duration: 2000,
-        complete: function () {
-          wx.redirectTo({
-            url: '/pages/login/login'
-          })
-        }
-      });
-    } else {
-      var userId = wx.getStorageSync("userName");
-      wx.request({
-        url: 'https://www.isxcxbackend1.cn/bmh_shop/point/list?userId=' + userId,
-        method: 'GET',
-        success: function (res) {
-          that.setData({
-            listdata: res.data.rows,
-            objdata: res.data.data
-          })
-        }
+    var userId = wx.getStorageSync("userName");
+    
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/log/table?userId=' + userId,
+      method: 'GET',
+      success: function (res) {
+        that.setData({
+          amt: wx.getStorageSync("amt"),
+          listdata: res.data.rows,
+          objdata: res.data.data
+        })
+      }
 
-      })
-    }
+    })
   },
 
   /**

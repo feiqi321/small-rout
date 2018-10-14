@@ -15,7 +15,7 @@ Page({
     onLoad: function (options) {
       var that = this;
       wx.request({
-        url: 'https://www.isxcxbackend1.cn/bmh_shop/welfare/table?userId=' + wx.getStorageSync('userName')+'&type=1',
+        url: 'https://www.isxcxbackend1.cn/bmh_shop/welfare/moretable?userId=' + wx.getStorageSync('userName')+'&type=1',
         method: 'GET',
         success: function (res) {
           that.setData({
@@ -25,7 +25,7 @@ Page({
 
       }),
         wx.request({
-        url: 'https://www.isxcxbackend1.cn/bmh_shop/welfare/table?userId=' + wx.getStorageSync('userName')+'&type=2',
+        url: 'https://www.isxcxbackend1.cn/bmh_shop/welfare/moretable?userId=' + wx.getStorageSync('userName')+'&type=2',
           method: 'GET',
           success: function (res) {
             that.setData({

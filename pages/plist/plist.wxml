@@ -1,6 +1,9 @@
  <view class='position'>
-  清洁用品>>宝马会
+  {{typeName}}
 </view>
  <view>
  <listitem wx:for="{{listData}}" listData="{{item}}" wx:for-item="item"></listitem>
  </view>
+ <view wx:if="{{listData.length==0}}" class='empty'>
+    没有查询到商品
+  </view>

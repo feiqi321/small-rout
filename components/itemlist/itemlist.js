@@ -26,8 +26,9 @@ Component({
   methods: {
     gotoDetail(e){
       var id = parseInt(e.currentTarget.dataset.id);
+      var modelType = parseInt(e.currentTarget.dataset.text);
       wx.navigateTo({
-        url: '/pages/goods_detail/goods_detail?id=' + id
+        url: '/pages/goods_detail/goods_detail?id=' + id+'&modelType='+modelType
       })
     }
   }

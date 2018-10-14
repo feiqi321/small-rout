@@ -1,4 +1,5 @@
 // pages/login/login.js
+var interval = null //倒计时函数
 Page({
 
   /**
@@ -6,6 +7,11 @@ Page({
    */
   currentTab:0,
   data: {
+    sendLoginmsg: "getcode",
+    sendRegistmsg: "getcode",
+    getLoginmsg: "获取验证码", 
+    getRegistmsg: "获取验证码", 
+    currentTime:61,
     phone: 'q',
     code: '',
     referee:'',
@@ -106,13 +112,15 @@ Page({
       }
 
     })
+
   },
+  
   back(){
     wx.switchTab({
       url: '/pages/index/index',
     })
   },
-  getcode() {
+  getRegistcode() {
     var reg = new RegExp(/^1[0-9]{10}$/);
     if (!reg.test(this.data.phone)) {
       wx.showToast({
@@ -122,14 +130,98 @@ Page({
       });
       return;
     }
+
+    if (this.data.sendRegistmsg == "getcodeafter") {
+      wx.showToast({
+        title: '60秒内不能重复发送',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    var that = this;
+    var currentTime = that.data.currentTime
+    interval = setInterval(function () {
+      currentTime--;
+      that.setData({
+        sendRegistmsg: "getcodeafter",
+        getRegistmsg: currentTime + '秒'
+      })
+      if (currentTime <= 0) {
+        clearInterval(interval)
+        that.setData({
+          sendRegistmsg: "getcode",
+          getRegistmsg: '获取验证码',
+          currentTime: 61
+        })
+      }
+    }, 1000)  
+
+
     wx.request({
       url: 'https://www.isxcxbackend1.cn/bmh_shop/sms/sendSms',
       data:{
-        tel: this.data.phone
+        tel: this.data.phone,
+        type: 1
       },
       method: 'GET',
       success: function (res) {
         if(res.success){
+          wx.showToast({
+            title: '发送成功！',
+            icon: 'none',
+            duration: 2000
+          })
+        };
+      }
+
+    })
+  },
+  getLogincode() {
+    var reg = new RegExp(/^1[0-9]{10}$/);
+    if (!reg.test(this.data.phone)) {
+      wx.showToast({
+        title: '请输入正确的手机号',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    if (this.data.sendLoginmsg =="getcodeafter"){
+      wx.showToast({
+        title: '60秒内不能重复发送',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    var that = this;
+    var currentTime = that.data.currentTime
+    interval = setInterval(function () {
+      currentTime--;
+      that.setData({
+        sendLoginmsg:"getcodeafter",
+        getLoginmsg: currentTime + '秒'
+      })
+      if (currentTime <= 0) {
+        clearInterval(interval)
+        that.setData({
+          sendLoginmsg: "getcode",
+          getLoginmsg: '获取验证码',
+          currentTime: 61
+        })
+      }
+    }, 1000)  
+    
+    wx.request({
+      url: 'https://www.isxcxbackend1.cn/bmh_shop/sms/sendSms',
+      data: {
+        tel: this.data.phone,
+        type:2
+      },
+      method: 'GET',
+      success: function (res) {
+        if (res.success) {
           wx.showToast({
             title: '发送成功！',
             icon: 'none',

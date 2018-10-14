@@ -16,6 +16,7 @@
     "pages/usercenter/usercenter",
     "pages/goods_detail/goods_detail",
     "pages/address/address",
+    "pages/czjl/czjl",
     "pages/addedit/addedit",
     "pages/orderlist/orderlist",
     "pages/comment/comment",

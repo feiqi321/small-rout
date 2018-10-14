@@ -3,6 +3,7 @@ Page({
   data: {
     pageIndex: 1,
     filterId: null,
+    typeName:'',
     isEnd: false,
     listData: []
   },
@@ -53,6 +54,7 @@ Page({
         }
         var data = _this.data.pageIndex === 1 ? res.data.rows : _this.data.listData.concat(res.data.rows);
         _this.setData({
+          typeName: res.data.data,
           listData: data
         });
         cb && cb();

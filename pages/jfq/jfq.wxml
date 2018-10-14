@@ -1,7 +1,7 @@
-<view class='nav'>
+<!--<view class='nav'>
  <navigator url="/pages/store_list/store_list" hover-class="navigator-hover">福利认领区</navigator>
  <navigator url="/pages/jfq/jfqt" hover-class="navigator-hover" class='navigator-hover'>积分交换区</navigator>
-</view>
+</view>-->
 <view class='my-jf'>
 {{aa}}
 <text class='zs-btn' bindtap="modalinput">赠送>></text>
@@ -12,7 +12,7 @@
   <text class='hd'>积分明细</text>
   <view class='item' wx:for="{{listdata}}" wx:for-item="item" wx:key="item.id">
     <view class='ly'>
-    <text>{{item.sendUsername}}</text>
+    <text>{{item.acceptUsername}}</text>
     <text class='fr'>{{item.amount}}</text>
     </view>
     <view class='time'>{{item.creattime}}</view>

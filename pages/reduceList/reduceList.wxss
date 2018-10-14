@@ -18,3 +18,13 @@
   border-bottom: 2px solid #f00;
   background: #fff;
 }
+.empty{
+  padding: 120rpx 0;
+  text-align: center;
+  line-height: 3em;
+  font-size: 30rpx;
+}
+.empty text{
+  display: block;
+  color: #999;
+}

@@ -1,0 +1,16 @@
+
+<view class='my-jf'>
+
+<text class='f36'> 余额(¥): {{amt}}</text>
+</view>
+<view class='jf-list'>
+  <text class='hd'>充值明细</text>
+  <view class='item' wx:for="{{listdata}}" wx:for-item="item" wx:key="item.id">
+    <view class='ly'>
+    <text>{{item.amount}}</text>
+    <text class='time'>{{item.creattime}}</text>
+    </view>
+    
+  </view>
+</view>
+

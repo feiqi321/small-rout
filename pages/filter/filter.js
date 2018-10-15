@@ -45,8 +45,6 @@ Page({
     this.queryFilterList();
   },
   onPullDownRefresh: function () {
-    that.queryFilterList(function () {
-      wx.stopPullDownRefresh();
-    });
+    wx.stopPullDownRefresh();
   }
 })

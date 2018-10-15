@@ -25,12 +25,12 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    
+    debugger;
     var id = options.id;
     var orderId = options.orderId;
     that.setData({
       currentId:id,
-      orderId: orderId
+      orderId: orderId==null?"":orderId
     }) 
     var url;
     if(!id){
@@ -42,13 +42,10 @@ Page({
       url: url,
       method: 'GET',
       success: function (res) {
-        console.log(res)
-
-
         that.setData({
-          linkman:res.data.data.linkman,
-          tel: res.data.data.tel,
-          detail: res.data.data.detail
+          linkman:res.data.linkman,
+          tel: res.data.tel,
+          detail: res.data.detail
         })    
 
          that.data.linkman = res.data.data.linkman,
@@ -59,8 +56,6 @@ Page({
         //  tel = res.data.data.tel,
         //  detail = res.data.data.detail
         //})
-        
-     
         
       }
 
@@ -137,7 +132,6 @@ Page({
       },
       method: 'POST',
       success: function (res) {
-        console.log(res)
         if (!res.data.success) {
           wx.showToast({
             title: res.data.errorMsg || '网络异常！',
@@ -172,7 +166,6 @@ Page({
       url: 'https://www.isxcxbackend1.cn/bmh_shop//address/info/'+id,
       method: 'DELETE',
       success: function (res) {
-        console.log(res)
         if (!res.data.success) {
           wx.showToast({
             title: res.data.errorMsg || '网络异常！',

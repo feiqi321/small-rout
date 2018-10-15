@@ -16,3 +16,7 @@
   line-height: 2em;
   text-align: left;
 }
+.des{
+  line-height: 30px;
+  margin-bottom: 10px; 
+}

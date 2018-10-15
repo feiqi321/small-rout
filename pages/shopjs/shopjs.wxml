@@ -1,6 +1,10 @@
 <!--pages/contact/contact.wxml-->
 <view class='contact'>
-<text>本平台的商家都是国内各个优秀的商品，本着诚信交易，公平，公正。</text>
-<text>平台会监督各个商家进行交易，督促商家在法律范围内进行合理的交易。</text>
+  <view wx:for="{{dataList}}">
+    <view>
+      <image src='{{item.url}}' widthFix style='width:100%'></image>
+    </view>
+    <view class='des'>{{item.context}}</view>
+  </view>
 
 </view>

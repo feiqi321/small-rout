@@ -43,8 +43,6 @@ Page({
       method: 'GET',
       success: function (res) {
         console.log(res)
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 
 
         that.setData({
@@ -53,12 +51,7 @@ Page({
           detail: res.data.data.detail
         })    
 
-
-
-=======
-=======
->>>>>>> Stashed changes
-        that.data.linkman = res.data.data.linkman,
+         that.data.linkman = res.data.data.linkman,
           that.data.tel = res.data.data.tel,
           that.data.detail = res.data.data.detail
         //that.setData({
@@ -69,7 +62,6 @@ Page({
         
      
         
->>>>>>> Stashed changes
       }
 
     })
